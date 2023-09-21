@@ -8,7 +8,6 @@ angular.module('myApp', [
   'navbar',
   'settings',
   'search',
-  'login',
   'searchdata'
 ])
 .service('AuthService', function() {})

@@ -1,0 +1,49 @@
+@media (max-width: 600px) {
+    .mob-hide {
+      display: none;
+    }
+    .logo {
+      background-image: url("assets/logo.wu.sm.svg") !important;
+      width:4rem;
+      height: 3rem;
+      background-clip: border-box;
+      background-repeat: no-repeat;
+      /* background-position: center; */
+      position: relative;
+      top:-0.5rem;
+      background-size: cover;
+    }
+    .nav {
+      position: fixed;
+      margin-top: -1%;
+      bottom: 0;
+      /* z-index: 50; */
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+      height: 4rem;
+      width: 100vw;
+      background: black;
+    }
+    .mob-nav{
+      position: absolute !important;
+      bottom: 0 !important;
+      right: 0 !important;
+      background-color: #222 !important;
+      padding: 2rem !important;
+  
+    }
+    .nav .side-menu div {
+      text-wrap: nowrap;
+    }
+    .side-menu:hover,
+    .active {
+      /* background-color: yellow  ;
+    color: black; */
+      border-left: none !important;
+      border-bottom: solid 2px yellow;
+    }
+    .side-menu:first-child {
+      margin-top: 0 !important;
+    }
+  }

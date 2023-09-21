@@ -8,12 +8,6 @@ angular.
         when('/', {
           template: '<home></home>'
         }).
-        when('/signup', {
-          template: '<signup></signup>'
-        }).
-        when('/login', {
-          template: '<login></login>'
-        }).
         when('/settings', {
           template: '<settings></settings>'
         }).
@@ -22,14 +16,4 @@ angular.
         }).
         otherwise('/');
     }
-  ], function Config($httpProvider, jwtOptionsProvider) {
-    jwtOptionsProvider.config({
-      tokenGetter: ['AuthService', function(AuthService) {
-        return AuthService.getToken();
-      }],
-      whiteListedDomains: ['example.com'],
-      unauthenticatedRedirectPath: '/login',
-    });
-
-    $httpProvider.interceptors.push('jwtInterceptor');
-  });
+  ]);
