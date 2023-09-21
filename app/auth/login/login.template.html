@@ -1,0 +1,28 @@
+<section class="section-login-form" style="border: 2px solid yellow; background-color:black;">
+    <!-- <h6 class="text-black"> <a href="#!/" class="text-black">Home</a> > <a href="#!/settings" class="text-black">Settings</a> > <a href="#!/settings/search" class="text-black"> Transaction Search </a> </h6> -->
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col mt-5 login-container">
+          <div class="card1">
+            <div class="card-body login-box" style="z-index: 9999;">
+                <h6 class="text-center">Login</h6>
+                <form action="" name="myForm" ng-submit="$ctrl.submitForm()" class="login-form">
+                    <div class="row">
+                        <!-- <h4>Transaction Criteria</h4> -->
+                        <div class="input-group input-group-icon">
+                            <label for="" class="text-black">Email</label>
+                            <input type="email" ng-model="$ctrl.email" name="email" id="email" required>
+                        </div>
+                        <div class="input-group input-group-icon">
+                            <label for="" class="text-black">Password</label>
+                            <input type="password" ng-model="$ctrl.password" name="password" id="password" required>
+                        </div>
+                    </div>
+                </form>
+                <div class="search">
+                    <button class="search-button" ng-click="$ctrl.login()" ng-disabled="myForm.$invalid">Log In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
