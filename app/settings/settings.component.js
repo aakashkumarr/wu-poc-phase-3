@@ -8,6 +8,8 @@ angular.
     controller: [
       function SettingsController() {
         this.message = 'Settings works!'
+        console.log(this.message);
+        
       }
     ]
   });
