@@ -1,7 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  color: white !important;
+  /* color: white !important; */
 
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   box-sizing: border-box;
@@ -525,4 +525,102 @@ th {
 
 tr {
   border: 1px solid black;
+}
+
+/* seacrch form  */
+
+.searchContainer {
+
+  width: 40%;
+  background-color: #f9f9f9;
+  margin-top: 12%;
+  margin-right: 0%;
+  border-radius: 1.5%;
+  padding: 2%;
+}
+
+.searchForm {
+
+  border: 1px solid rgb(186, 184, 184);
+
+  border-radius: .5%;
+
+  padding: 5%;
+
+}
+
+.searchForm h2 {
+
+  color: black !important;
+
+  /* font-weight:5; */
+
+  font-size: medium;
+
+}
+
+
+
+.btn {
+
+  /* width: 100%; */
+
+  width: 100% !important;
+
+  margin: 5% 0 !important;
+
+  padding: 2% !important;
+
+  background-color: rgb(244, 231, 39) !important;
+
+  color: black !important;
+
+  border: none !important;
+
+  border-radius: 20px !important;
+
+}
+
+.labell {
+
+  color: (186, 184, 184) !important;
+
+}
+
+
+
+.form-floating2 {
+
+  position: relative;
+
+  /* width: 200px; */
+
+}
+
+
+
+.form-floating2 select {
+
+  width: 100%;
+
+  padding: 8px;
+
+  border: none;
+
+  border-bottom: solid 2px #ccc !important;
+  /* Set the bottom border color */
+
+  background-color: transparent;
+
+  color: black;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  -moz-appearance: none;
+
+}
+select:focus, select:active{
+  outline:0 !important;
 }
