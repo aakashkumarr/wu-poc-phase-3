@@ -14,6 +14,6 @@ angular.
         when('/settings/search', {
           template: '<search></search>'
         }).
-        otherwise('/');
+        otherwise('/home');
     }
   ]);
