@@ -1,3 +1,4 @@
+
 <!-- < class="search-section" style="margin-top: 60px; margin-bottom: 60px;"> -->
     <!-- <h6 class="text-black"> <a href="#!/" class="text-black">Home</a> > <a href="#!/settings" class="text-black">Settings</a> > <a href="#!/settings/search" class="text-black"> Transaction Search </a> </h6> -->
     <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 10px;">
@@ -65,12 +66,305 @@
                     </div>
                 </form>
             </div>
-          </div>
-        </div>  
+
+
+
+            <!-- <div class="form-floating">
+
+                <input ng-model="date" type="date" class="form-control" name="" id="floatingTextarea" placeholder="Transaction Date" />
+               
+
+            </div> -->
+            <div class="form-floating">
+                <lable class="labell" for="floatingTextarea">Transaction Date</lable>
+                
+                <input ng-model="date" type="date" class="form-control" name="" id="floatingTextarea" placeholder="Transaction Date" />
+
+            </div>
+
+            <div class="form-floating2">
+                <lable class="labell" for="floatingTextarea">Direction</lable>
+                
+                <select ng-model="direction" class="form-select" aria-label="Default select example">
+
+                    <!-- <option selected for="floatingTextarea">Direction</option> -->
+
+                    <option value="send">Send</option>
+
+                    <option value="received">Received</option>
+
+                </select>
+
+
+            </div>
+
+            <div class="form-floating2">
+                <lable class="labell" for="floatingTextarea">Status</lable>
+
+
+                <select ng-model="status" class="form-select" aria-label="Default select example">
+
+                    <!-- <option selected for="floatingTextarea">Status</option> -->
+
+                    <option value="paid">Paid</option>
+
+                    <option value="unpaid">Unpaid</option>
+
+                </select>
+
+
+
+
+            </div>
+
+            <div class="form-floating2">
+                <lable class="labell" for="floatingTextarea">Fixed Transaction</lable>
+                
+                <select ng-model="fixedTransaction" class="form-select" aria-label="Default select example">
+
+                    <!-- <option selected for="floatingTextarea">Fixed Transaction</option> -->
+                    <option value="SEND">Send</option>
+
+                    <option value="RECIEVED">Received</option>
+                </select>
+
+
+            </div>
+
+            <div class="form-floating2">
+                <lable class="labell" for="floatingTextarea">Recording Country</lable>
+
+
+                <select ng-model="recordingCountry" class="form-select" aria-label="Default select example">
+
+                    <!-- <option selected for="floatingTextarea">Recording Country</option> -->
+                    <option value="USA">USA</option>
+                    <option value="India">India</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value=" Cuba">Cuba</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Bhutan">Bhutan</option>
+
+                    
+
+                </select>
+
+
+            </div>
+
+            <div class="form-floating2">
+                <lable  class="labell" for="floatingTextarea">Pay Out Country</lable>
+
+
+                <select ng-model="payOut" class="form-select" aria-label="Default select example">
+
+                    <!-- <option selected for="floatingTextarea">Pay Out Country</option> -->
+                    <option value="USA">USA</option>
+                    <option value="India">India</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value=" Cuba">Cuba</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Bhutan">Bhutan</option>
+
+                </select>
+
+
+            </div>
+
+            <div class="form-floating2">
+                <lable class="labell" for="floatingTextarea">Sending Side Currency</lable>
+
+
+                <select ng-model="sendingSideCurrency" class="form-select" aria-label="Default select example">
+
+                    <!-- <option selected for="floatingTextarea">Sending Side Currency</option> -->
+
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="INR">INR</option>
+                    <option value="MXN">MXN</option>
+                    <option value="BHD">BHD</option>
+                    <option value="CYN">CYN</option>
+                    <option value="CAD">CAD</option>
+                    <option value="GBD">GBD</option>
+                    <option value="KRW">KRW</option>
+
+                </select>
+
+
+            </div>
+
+            <div>
+
+                <button class="btn">search</button>
+
+            </div>
+
         </div>
-        <div class="col col-md-7 col-search-data">
-            <searchdata></searchdata>
-        </div>  
-    </div>
-    
-</section>
+
+    </form>
+
+</div>
+<div class="col col-md-7 col-search-data">
+  
+    <searchdata></searchdata>
+
+</div>  
+
+
+
+<!-- <class="search-section" style="margin-top: 60px; margin-bottom: 60px;">
+  
+      <h6 class="text-black"> <a href="#!/" class="text-black">Home</a> > <a href="#!/settings" class="text-black">Settings</a> > <a href="#!/settings/search" class="text-black"> Transaction Search </a> </h6>
+  
+      <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 10px;">
+  
+          <div class="card mb-2">
+  
+          <div class="col mt-2 mb-2">
+  
+            <div class="card1">
+  
+              <div class="card-body login-box">
+  
+                  <h6>Transaction Criteria</h6>
+  
+                  <form action="" name="myForm" ng-submit="$ctrl.submitForm()">
+  
+                      <div class="row">
+  
+                         
+  
+                          <div class="input-group input-group-icon">
+  
+                              <label for="" class="text-black"> MTCN </label>
+  
+                              <input type="number" name="" id="" placeholder="MTCN" required>
+  
+                          </div>
+  
+                          <div class="input-group input-group-icon">
+  
+                              <label for="" class="text-black"> Transaction Date </label>
+  
+                              <input type="date" name="" id="" placeholder="Transaction Date">
+  
+                          </div>
+  
+                          <div class="input-group" style="display: flex; flex-direction: column;">
+  
+                              <label for="" class="text-black">Direction</label>
+  
+                              <select name="" id="">
+  
+                                  <option value="">Send</option>
+  
+                                  <option value="">Received</option>
+  
+                              </select>
+  
+                          </div>
+  
+                          <div class="input-group" style="display: flex; flex-direction: column;">
+  
+                              <label for="" class="text-black">Status</label>
+  
+                              <select name="" id="">
+  
+                                  <option value="">Paid</option>
+  
+                                  <option value="">Unpaid</option>
+  
+                              </select>
+  
+                          </div>
+  
+                          <div class="input-group" style="display: flex; flex-direction: column;">
+  
+                              <label for="" class="text-black">Fixed Transaction</label>
+  
+                              <select name="" id="">
+  
+                                  <option value="">Send</option>
+  
+                                  <option value="">Received</option>
+  
+                              </select>
+  
+                          </div>
+  
+                          <div class="input-group" style="display: flex; flex-direction: column;">
+  
+                              <label for="" class="text-black">Recording Country</label>
+  
+                              <select name="" id="">
+  
+                                  <option value="">USA</option>
+  
+                                  <option value="">Received</option>
+  
+                              </select>
+  
+                          </div>
+  
+                          <div class="input-group" style="display: flex; flex-direction: column;">
+  
+                              <label for="" class="text-black">Pay Out Country</label>
+  
+                              <select name="" id="">
+  
+                                  <option value="">USA</option>
+  
+                                  <option value="">Received</option>
+  
+                              </select>
+  
+                          </div>
+  
+                          <div class="input-group" style="display: flex; flex-direction: column;">
+  
+                              <label for="" class="text-black">Sending Side Currency</label>
+  
+                              <select name="" id="">
+  
+                                  <option value="">USD</option>
+  
+                                  <option value="">Euro</option>
+  
+                              </select>
+  
+                          </div>
+  
+                      </div>
+  
+                      <div class="search">
+  
+                          <button class="search-button" ng-click="$ctrl.search()" ng-disabled="myForm.$invalid">Search</button>
+  
+                      </div>
+  
+                  </form>
+  
+              </div>
+  
+            </div>
+  
+          </div>  
+  
+          </div>
+  
+          <div class="col col-md-7 col-search-data">
+  
+              <searchdata></searchdata>
+  
+          </div>  
+  
+      </div>
+  
+     
+  
+  </section> -->

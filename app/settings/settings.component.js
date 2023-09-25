@@ -23,6 +23,7 @@ angular.
           console.log($location.path());
           return $location.path() === '/settings/search';
         };
+
       }
     ]
   });
