@@ -20,7 +20,7 @@ component('search', {
           payOut:$scope.payOut,
           currency:$scope.sendingSideCurrency
       });
-        console.log("gjh");
+        console.log("button working");
 
       }
       

@@ -6,17 +6,24 @@ module.exports = function(config) {
 
     files: [
       'lib/angular/angular.js',
+      // 'app/lib/new/angular-mocks.js',
+      // 'app/lib/new/angular-route.min.js',
+      // 'app/lib/new/angular.min.js',
+      
       'lib/angular-route/angular-route.js',
-      '../node_modules/angular-mocks/angular-mocks.js',
-      'core/**/*.js',
-      'app/**/*.js',
-      'view*/**/*.js',
-      '**/*.spec.js'
+      'lib/angular-route/angular-route.min.js',
+      'lib/angular-mocks/angular-mocks.js',
+      'app.js',
+      'settings/search/search.component.spec.js',
+      // 'settings/search/search.component.js',
+      // 'settings/search/search.module.js'
     ],
 
     exclude: [],
 
     preprocessors: {},
+
+    reporters: ['progress'],
 
     port: 9876,
 
@@ -32,7 +39,16 @@ module.exports = function(config) {
       'karma-chrome-launcher',
       'karma-firefox-launcher',
       'karma-jasmine'
-    ]
+    ],
+
+    client: {
+      jasmine: {
+        random: false,
+        helpers: [], 
+        spec_dir: "spec",
+        
+      }
+    }
 
   });
 };
