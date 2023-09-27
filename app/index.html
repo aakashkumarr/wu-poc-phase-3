@@ -25,25 +25,24 @@
 </head>
 <body ng-controller="myCtrl" style="background-color: rgb(229, 229, 229); margin: 0; padding: 0; position: absolute; top: 0; left: 0;">
   <!-- <div style="display: flex;flex-direction: column;width: 100%;box-sizing: border-box;overflow-x: hidden;"> -->
-    <!-- <navbar></navbar> -->
-    <navbar1></navbar1>
-    <span class="links-style"
-    ><a href="#!/" ng-show="$ctrl.showHome()">Home</a
-    ><a href="#!/settings" ng-show="$ctrl.showSettings()">Home>Settings</a
-    ><a href="#!/settings/search" ng-show="$ctrl.showSearch()">Home>Settings>Transaction Search</a></span
-  >
-    
-    <div class="view-container" ng-view></div>
-    
+    <navbar style="position: fixed; z-index:999;" class="nav-container"></navbar>
+    <!-- <navbar1></navbar1> -->
 
-
-    <!-- <div style="display: flex; flex-direction:row;">
-      <div class="container">
-        
-      </div>
-      <sidenav></sidenav>
+  
+  
+    <div style="display: flex; flex-direction:row; justify-content: space-between; width: 100%;">
       
-  </div> -->
+      <sidenav style="min-height: 100vh; position: fixed; top:48px;"></sidenav>
+      <div style="width:100%">
+        <div class="links-style"
+        ><a href="#!/" ng-show="$ctrl.showHome()">Home</a
+        ><a href="#!/settings" ng-show="$ctrl.showSettings()">Home>Settings</a
+        ><a href="#!/settings/search" ng-show="$ctrl.showSearch()">Home>Settings>Transaction Search</a></div
+      >
+        <div class="view-container" ng-view></div>
+      </div>
+      
+  </div>
 
   <!-- <script src="request.js"></script> -->
   <script src="lib/angular/angular.js"></script>
@@ -53,13 +52,13 @@
   <script src="app.config.js"></script>
   <script src="home/home.module.js"></script>
   <script src="home/home.component.js"></script>
-  <!-- <script src="layouts/sidenav/sidenav.module.js"></script>
+  <script src="layouts/sidenav/sidenav.module.js"></script>
   <script src="layouts/sidenav/sidenav.component.js"></script>
   <script src="layouts/navbar/navbar.module.js"></script>
-  <script src="layouts/navbar/navbar.component.js"></script> -->
+  <script src="layouts/navbar/navbar.component.js"></script>
  
-  <script src="layouts/navbar1/navbar1.module.js"></script>
-  <script src="layouts/navbar1/navbar1.component.js"></script>
+  <!-- <script src="layouts/navbar1/navbar1.module.js"></script>
+  <script src="layouts/navbar1/navbar1.component.js"></script> -->
   <script src="settings/settings.module.js"></script>
   <script src="settings/settings.component.js"></script>
   <script src="settings/search/search.module.js"></script>
