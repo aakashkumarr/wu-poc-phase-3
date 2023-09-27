@@ -1,17 +1,20 @@
-<section>
-    <div class="card" style="width: 100%; padding: 10px; margin-top: 30px;">
-        <table>
+<!-- <section class="table-section">
+    <div class="card table-card">
+        <table class="table table-sm">
             <thead>
                 <tr>
-                    <!-- <th class="text-black" style="border: 1px solid gray;">Type</th> -->
+                    <th class="text-black" style="border: 1px solid gray;">Type</th>
                     <th class="text-black" style="border: 1px solid gray;">MTCN</th>
                     <th class="text-black" style="border: 1px solid gray;">Date</th>
+                    <th class="text-black" style="border: 1px solid gray;">Direction</th>
                     <th class="text-black" style="border: 1px solid gray;">Transaction Type</th>
                     <th class="text-black" style="border: 1px solid gray;">Rec Curr</th>
                     <th class="text-black" style="border: 1px solid gray;">Pay Curr</th>
+                    <th class="text-black" style="border: 1px solid gray;">Status</th>
+                    <th class="text-black" style="border: 1px solid gray;">Sending Side Currency</th>
                 </tr>
                 <tr ng-repeat="row in array | filter:filter">
-                    <!-- <td class="text-black"> {{row.type}} </td> -->
+                    <td class="text-black"> T </td>
                     <td class="text-black"> {{row.mctn}} </td>
                     <td class="text-black"> {{row.date | date}} </td>
                     <td class="text-black"> {{row.direction}} </td>
@@ -19,21 +22,49 @@
                     <td class="text-black"> {{row.recordingCountry}} </td>
                     <td class="text-black"> {{row.payOutCountry}} </td>
                     <td class="text-black"> {{row.status}} </td>
-                    <td class="text-black"> {{row.sendingSideCurrency}} </td>
-    
-
-                    
+                    <td class="text-black"> {{row.sendingSideCurrency}} </td> 
                 </tr>
-                <!-- <tr ng-repeat="row in array.mockData | filter:filter">
-                    <td class="text-black"> {{row.name}} </td>
-                    <td class="text-black"> {{row.salary}} </td>
-                  
-                    <td class="text-black"> {{row.married}} </td>
-                   
-                </tr> -->
             </thead>
         </table>
         
     </div>
-    <button ng-click="handleButtonClick()">ytfut</button>
+    <pagination ng-if="array.length > 0" current-page="$ctrl.currentPage+1" total-pages="$ctrl.totalPages" on-page-change="loadDataForPage(pageNumber)">
+    </pagination>
+</section> -->
+
+<!-- <section class="card table-container" ng-if="$ctrl.tableData.length > 0"> -->
+<section class="card table-container">
+    <div class="table-content-container">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th class="text-black" style="border: 1px solid gray;">Type</th>
+                    <th class="text-black" style="border: 1px solid gray;">MTCN</th>
+                    <th class="text-black" style="border: 1px solid gray;">Date</th>
+                    <th class="text-black" style="border: 1px solid gray;">Transaction Type</th>
+                    <th class="text-black" style="border: 1px solid gray;">Rec Curr</th>
+                    <th class="text-black" style="border: 1px solid gray;">Pay Curr</th>
+                    <th class="text-black" style="border: 1px solid gray;">Status</th>
+                    <th class="text-black" style="border: 1px solid gray;">Currency</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in array | filter:filter">
+                    <td ng-click="$ctrl.showpopup(row)" class="text-black"> T </td>
+                    <td ng-click="$ctrl.showpopup(row)" class="text-black"> {{row.mctn}} </td>
+                    <td ng-click="$ctrl.showpopup(row)" class="text-black"> {{row.date | date: "yyyy-MM-dd":"UTC"}} </td>
+                    <td ng-click="$ctrl.showpopup(row)" class="text-black"> {{row.direction}} </td>
+                    <td ng-click="$ctrl.showpopup(row)" class="text-black"> {{row.recordingCountry}} </td>
+                    <td ng-click="$ctrl.showpopup(row)" class="text-black"> {{row.payOutCountry}} </td>
+                    <td ng-click="$ctrl.showpopup(row)" class="text-black"> {{row.status}} </td>
+                    <td ng-click="$ctrl.showpopup(row)" class="text-black"> {{row.sendingSideCurrency}} </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <ul uib-pagination ng-model="currentPage" total-items="totlaItems" items-per-page="itemsPerPage"></ul> -->
+    </div>
+    <pagination ng-if="array.length > 0" current-page="$ctrl.currentPage+1" total-pages="$ctrl.totalPages" on-page-change="loadDataForPage(pageNumber)">
+    </pagination>
+    <button ng-click="$ctrl.export()" class="btn btn-outline-dark align-self-end btn-sm">Export to XML</button>
 </section>
+

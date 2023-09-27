@@ -1,80 +1,23 @@
-
-<!-- < class="search-section" style="margin-top: 60px; margin-bottom: 60px;"> -->
-    <!-- <h6 class="text-black"> <a href="#!/" class="text-black">Home</a> > <a href="#!/settings" class="text-black">Settings</a> > <a href="#!/settings/search" class="text-black"> Transaction Search </a> </h6> -->
-    <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 10px;">
-        <div class="card mb-2">
-        <div class="col mt-2 mb-2">
-          <div class="card1">
-            <div class="card-body login-box">
-                <h6>Transaction Criteria</h6>
-                <form action="" name="myForm" ng-submit="$ctrl.submitForm()">
-                    <div class="row">
-                        <!-- <h4>Transaction Criteria</h4> -->
-                        <div class="input-group input-group-icon">
-                            <label for="" class="text-black"> MTCN </label>
-                            <input type="number" name="" id="" placeholder="MTCN" required>
-                        </div>
-                        <div class="input-group input-group-icon">
-                            <label for="" class="text-black"> Transaction Date </label>
-                            <input type="date" name="" id="" placeholder="Transaction Date">
-                        </div>
-                        <div class="input-group" style="display: flex; flex-direction: column;">
-                            <label for="" class="text-black">Direction</label>
-                            <select name="" id="">
-                                <option value="">Send</option>
-                                <option value="">Received</option>
-                            </select>
-                        </div>
-                        <div class="input-group" style="display: flex; flex-direction: column;">
-                            <label for="" class="text-black">Status</label>
-                            <select name="" id="">
-                                <option value="">Paid</option>
-                                <option value="">Unpaid</option>
-                            </select>
-                        </div>
-                        <div class="input-group" style="display: flex; flex-direction: column;">
-                            <label for="" class="text-black">Fixed Transaction</label>
-                            <select name="" id="">
-                                <option value="">Send</option>
-                                <option value="">Received</option>
-                            </select>
-                        </div>
-                        <div class="input-group" style="display: flex; flex-direction: column;">
-                            <label for="" class="text-black">Recording Country</label>
-                            <select name="" id="">
-                                <option value="">USA</option>
-                                <option value="">Received</option>
-                            </select>
-                        </div>
-                        <div class="input-group" style="display: flex; flex-direction: column;">
-                            <label for="" class="text-black">Pay Out Country</label>
-                            <select name="" id="">
-                                <option value="">USA</option>
-                                <option value="">Received</option>
-                            </select>
-                        </div>
-                        <div class="input-group" style="display: flex; flex-direction: column;">
-                            <label for="" class="text-black">Sending Side Currency</label>
-                            <select name="" id="">
-                                <option value="">USD</option>
-                                <option value="">Euro</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="search">
-                        <button class="search-button" ng-click="$ctrl.search()" ng-disabled="myForm.$invalid">Search</button>
-                    </div>
-                </form>
-            </div>
-
-
-
+<section class="search-section" style="margin-top: 60px; margin-bottom: 60px; display: flex; flex-direction: column;">
+    <!-- < class="search-section" style="margin-top: 60px; margin-bottom: 60px;"> -->
+    <h6 class="text-black"> <a href="#!/" class="text-black">Home</a> > <a href="#!/settings" class="text-black">Settings</a> > <a href="#!/settings/search" class="text-black"> Transaction Search </a> </h6>
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top: 10px; margin-left: 10px;">
+        <div class="card">
+        <div class="col col-md-12">
+          <div class="card1 mt-2 mb-2">
+            <form name="myForm" ng-submit="$ctrl.submitForm()">
             <!-- <div class="form-floating">
 
                 <input ng-model="date" type="date" class="form-control" name="" id="floatingTextarea" placeholder="Transaction Date" />
                
 
             </div> -->
+            <div class="form-floating">
+                <lable class="labell" for="floatingTextarea">MTCN</lable>
+                
+                <input ng-model="mtcn" type="number" class="form-control" name="mtcn" id="floatingTextarea" placeholder="MTCN" />
+
+            </div>
             <div class="form-floating">
                 <lable class="labell" for="floatingTextarea">Transaction Date</lable>
                 
@@ -203,17 +146,19 @@
                 <button class="btn">search</button>
 
             </div>
+        </form>
 
         </div>
 
-    </form>
-
+    </div>
+    </div>  
 </div>
-<div class="col col-md-7 col-search-data">
+<div class="col col-search-data">
   
     <searchdata></searchdata>
 
-</div>  
+</div>
+</section>
 
 
 

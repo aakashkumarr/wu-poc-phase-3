@@ -30,7 +30,9 @@
 
 }
 
-
+.search-section {
+    border: 2px solid black;
+}
 
 .btn {
 
@@ -92,3 +94,10 @@
     -moz-appearance: none;
 
 }
+
+/* SEARCH TABLE  */
+
+.table-card {
+    border: 1px solid black;
+}
+
