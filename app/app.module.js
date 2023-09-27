@@ -8,7 +8,8 @@ angular.module('myApp', [
   'navbar',
   'settings',
   'search',
-  'searchdata'
+  'searchdata',
+  'pagination'
 ])
 .service('AuthService', function() {})
 .controller('myCtrl', ['$http', '$rootScope', 'AuthService', function($http, $rootScope,AuthService) {

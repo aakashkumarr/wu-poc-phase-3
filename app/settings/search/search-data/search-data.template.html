@@ -3,15 +3,19 @@
         <table>
             <thead>
                 <tr>
-                    <!-- <th class="text-black" style="border: 1px solid gray;">Type</th> -->
+                    <th class="text-black" style="border: 1px solid gray;">Type</th>
                     <th class="text-black" style="border: 1px solid gray;">MTCN</th>
                     <th class="text-black" style="border: 1px solid gray;">Date</th>
+                    <th class="text-black" style="border: 1px solid gray;">Direction</th>
                     <th class="text-black" style="border: 1px solid gray;">Transaction Type</th>
                     <th class="text-black" style="border: 1px solid gray;">Rec Curr</th>
                     <th class="text-black" style="border: 1px solid gray;">Pay Curr</th>
+                    <th class="text-black" style="border: 1px solid gray;">Status</th>
+                    <th class="text-black" style="border: 1px solid gray;">Sending side curr</th>
+                    
                 </tr>
-                <tr ng-repeat="row in array | filter:filter">
-                    <!-- <td class="text-black"> {{row.type}} </td> -->
+                <tr ng-repeat="row in array | filter:filter" ng-click="popup(row)">
+                    <td class="text-black"> T </td>
                     <td class="text-black"> {{row.mctn}} </td>
                     <td class="text-black"> {{row.date | date}} </td>
                     <td class="text-black"> {{row.direction}} </td>
@@ -33,7 +37,10 @@
                 </tr> -->
             </thead>
         </table>
-        
+        <pagination ng-if="true" current-page="$ctrl.currentPage+1" total-pages="$ctrl.totalPages" on-page-change="loadDataForPage(pageNumber)">
+        </pagination>
     </div>
-    <button ng-click="handleButtonClick()">ytfut</button>
+    <!-- <button ng-click="handleButtonClick()">ytfut</button> -->
+
+
 </section>

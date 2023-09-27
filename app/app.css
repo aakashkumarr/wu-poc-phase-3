@@ -624,3 +624,15 @@ tr {
 select:focus, select:active{
   outline:0 !important;
 }
+
+.pagination{
+
+  display: flex;
+
+  flex-direction: row;
+
+  justify-content: space-evenly;
+
+  align-items: center;
+
+}
