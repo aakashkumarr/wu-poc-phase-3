@@ -2,15 +2,6 @@
 
 Template used - angular-seed
 
-# ABOUT ANGULAR_SEED
-
-This project is an application skeleton for a typical [AngularJS][angularjs] web app. You can use it
-to quickly bootstrap your angular webapp projects and dev environment for these projects.
-
-The seed contains a sample AngularJS application and is preconfigured to install the AngularJS
-framework and a bunch of development and testing tools for instant web development gratification.
-
-The seed app doesn't do much, just shows how to wire two controllers and views together.
 
 
 ## Getting Started
@@ -72,7 +63,7 @@ this server is:
 npm start
 ```
 
-Now browse to the app at [`localhost:8000/index.html`][local-app-url].
+Now browse to the app at [`localhost:8000/`][local-app-url].
 
 
 ## Directory Layout
@@ -81,58 +72,53 @@ Now browse to the app at [`localhost:8000/index.html`][local-app-url].
 wu-poc-phase-3/
   ├── app/                 (Application source code)
   │   ├── app.js            (Main app module)
-  │   ├── components/       (Reusable components)
-  │   │   ├── home/         (Example component)
-  │   │   │   ├── home.component.js
-  │   │   │   ├── home.template.html
-  |   |   |   ├── home.component.spec.js
-  |   |   |   ├── home.module.js
-  |   |   ├── layouts
-  |   |   |   ├── layouts/navbar
-  |   |   |   |   ├── navbar.component.js
-  |   |   |   |   ├── navbar.template.html
-  |   |   |   |   ├── navbar.module.js
-  |   |   |   ├── layouts/sidenav
-  |   |   |   |   ├── sidenav.component.js
-  |   |   |   |   ├── sidenav.template.html
-  |   |   |   |   ├── sidenav.module.js
-  │   │   ├── settings/        (Another example component)
-  |   |   |   ├── settings/search
-  |   |   |   |   ├── settings/search/search-data
-  |   |   |   |   |   ├── search-data.component.js
-  |   |   |   |   |   ├── search-data.component.spec.js
-  |   |   |   |   |   ├── search-data.template.html
-  |   |   |   |   |   ├── search-data.module.js
-  |   |   |   |   |   ├── search-data.service.js
-  |   |   |   |   ├── search.component.js
-  |   |   |   |   ├── search.template.html
-  |   |   |   |   ├── search.component.spec.js
-  |   |   |   |   ├── search.module.js
-  │   │   │   ├── settings.component.js
-  │   │   │   ├── settings.template.html
-  │   │   │   ├── settings.component.spec.js
-  │   │   │   ├── settings.module.js
-  │   │   ├── auth/        (Another example component)
-  │   │   │   ├── auth/login
-  |   │   │   │   ├── login.component.js
-  |   │   │   │   ├── login.template.html
-  |   │   │   │   ├── login.component.spec.js
-  |   │   │   │   ├── login.module.js
-  │   │   │   ├── auth/signup
-  |   │   │   │   ├── signup.component.js
-  |   │   │   │   ├── signup.template.html
-  |   │   │   │   ├── signup.component.spec.js
-  |   │   │   │   ├── signup.module.js
-  │   │   │   ├── auth.service.js
-  │   ├── shared/           (Shared code)
+  │   ├── home/         (Example component)
+  │   │   ├── home.component.js
+  │   │   ├── home.template.html
+  |   |   ├── home.component.spec.js
+  |   |   ├── home.module.js
+  |   ├── layouts
+  |   |   ├── layouts/navbar
+  |   |   |   ├── navbar.component.js
+  |   |   |   ├── navbar.template.html
+  |   |   |   ├── navbar.module.js
+  |   |   ├── layouts/sidenav
+  |   |   |   ├── sidenav.component.js
+  |   |   |   ├── sidenav.template.html
+  |   |   |   ├── sidenav.module.js
+  │   ├── settings/        (Another example component)
+  |   |   ├── settings/search
+  |   |   |   ├── settings/search/search-data
+  |   |   |   |   ├── search-data.component.js
+  |   |   |   |   ├── search-data.component.spec.js
+  |   |   |   |   ├── search-data.template.html
+  |   |   |   |   ├── search-data.module.js
+  |   |   |   |   ├── search-data.service.js
+  |   |   |   ├── search.component.js
+  |   |   |   ├── search.template.html
+  |   |   |   ├── search.component.spec.js
+  |   |   |   ├── search.module.js
+  │   │   ├── settings.component.js
+  │   │   ├── settings.template.html
+  │   │   ├── settings.component.spec.js
+  │   │   ├── settings.module.js
+  │   ├── auth/        (Another example component)
+  │   │   ├── auth/login
+  |   │   │   ├── login.component.js
+  |   │   │   ├── login.template.html
+  |   │   │   ├── login.component.spec.js
+  |   │   │   ├── login.module.js
+  │   │   ├── auth/signup
+  |   │   │   ├── signup.component.js
+  |   │   │   ├── signup.template.html
+  |   │   │   ├── signup.component.spec.js
+  |   │   │   ├── signup.module.js
+  │   │   ├── auth.service.js
+  │   ├── shared/           (Shared code optional)
   │   │   ├── directives/   (Reusable directives)
   │   │   ├── filters/      (Reusable filters)
   ├── assets/              (Static assets like images, fonts, etc.)
-  ├── css/                 (CSS styles)
-  │   ├── app.css
-  ├── test/                (Unit and end-to-end tests)
-  │   ├── components/      (Tests for components)
-  │   ├── services/        (Tests for services)
+  │   ├── app.css          (Root CSS styles)
   ├── node_modules/        (Node.js dependencies - not versioned)
   ├── package.json         (Node.js configuration)
   ├── karma.conf.js        (Karma test runner configuration)
