@@ -1,0 +1,105 @@
+
+<div ng-controller="welcmController">
+  <div class="details" id="popup" ng-show="formData">
+    <div class="popup">
+      <h4>Transaction Summary</h4>
+      <form>
+        <div mat-dialog-content class="content">
+          <div class="rows">
+            <div class="input-field">
+              <input type="text" id="TransactionType" name="TransactionType" ng-model="formData.mctn" >
+              <label>MCTN</label>
+            </div>
+
+            <div class="input-field">
+              <input type="text" id="SentPrincipal" name="SentPrincipal" ng-model="formData.sendPrincipal" >
+              <label> Sent Principal</label>
+            </div>
+
+            <div class="input-field">
+              <input type="text" id="SendingCountry" name="SendingCountry" ng-model="formData.sendingcountry" >
+              <label>Sending Country</label>
+            </div>
+          </div>
+
+
+          <div class="rows">
+            <div class="input-field">
+              <input type="dropdown" id="direction" name="direction" ng-model="formData.direction" >
+              <label>Direction</label>
+            </div>
+
+            <div class="input-field">
+              <input type="text" id="PayoutPrincipal" name="PayoutPrincipal" ng-model="formData.payoutPrincipal" >
+              <label>Payout Principal</label>
+            </div>
+
+            <div class="input-field">
+              <input type="text" id="PayoutCountry" name="PayoutCountry" ng-model="formData.payOutCountry" >
+              <label>Payout Country</label>
+            </div>
+          </div> 
+
+
+          <div class="rows">
+            <div class="input-field">
+              <input type="text" id="PayoutStatus" name="PayoutStatus" ng-model="formData.status" >
+              <label>Payout Status</label>
+            </div>
+
+            <div class="input-field">
+              <input type="text" id="ClearPrincipal" name="ClearPrincipal" ng-model="formData.clearPrincipal" >
+              <label>Clear Principal</label>
+            </div>
+
+            <div class="input-field">
+              <input type="text" id="ClearPrincipal(LOC)" name="ClearPrincipal(LOC)" ng-model="formData.clearprincipalLOC" >
+              <label>Clear Principal(LOC)</label>
+            </div> 
+          </div> 
+
+          <div class="rows">
+            <div class="input-field">
+              <input type="text" id="SettlementStatus" name="SettlementStatus" ng-model="formData.settlementstatus" >
+              <label>Settlement Status</label>
+            </div>
+
+            <div class="input-field">
+              <input type="text" id="TotalChanges" name="TotalChanges" ng-model="formData.totalCharges" >
+              <label>Total Changes</label>
+            </div>
+
+            <div class="input-field">
+              <input type="text" id="AgentIncome" name="AgentIncome" ng-model="formData.agentIncome" >
+              <label>Agent Income</label>
+            </div>
+          </div>
+
+          <div class="rows">
+            <div class="input-field">
+              <input type="text" id="ImportStatus" name="ImportStatus" ng-model="formData.importStatus" >
+              <label>Import Status</label>
+            </div>
+
+            <div class="input-field">
+              <input type="text" id="RecordingDate" name="RecordingDate" ng-model="formData.recordingDate" >
+              <label>Recording Date</label>
+            </div>
+
+            <div class="input-field">
+              <input type="text" id="RecordingDate(LOC)" name="RecordingDate(LOC)" ng-model="formData.recordingDateLOC" >
+              <label>Recording Date(LOC)</label>
+            </div>
+          </div> 
+          <span>
+            <button id="closePopup" class="search" ng-click="closePopup()">Close</button>
+            <button id="export" class="search"  ng-click="exportXml()">Export</button>
+          </span>
+
+        </div>
+      </form>
+    </div>
+
+    
+  </div>
+

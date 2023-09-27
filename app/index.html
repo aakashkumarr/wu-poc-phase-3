@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css"> -->
   <link rel="stylesheet" href="app.css">
   <link rel="stylesheet" href="app.phone.css">
+  <link rel="stylesheet" href="settings/search/search-data/popup/popup.css">
   <link rel="icon" href="assets/logo.wu.sm.svg"/>
   <link
       rel="stylesheet"
@@ -25,11 +26,10 @@
 </head>
 <body ng-controller="myCtrl" style="background-color: rgb(229, 229, 229); margin: 0; padding: 0; position: absolute; top: 0; left: 0;">
   <!-- <div style="display: flex;flex-direction: column;width: 100%;box-sizing: border-box;overflow-x: hidden;"> -->
+
     <navbar style="position: fixed; z-index:999;" class="nav-container"></navbar>
     <!-- <navbar1></navbar1> -->
 
-  
-  
     <div style="display: flex; flex-direction:row; justify-content: space-between; width: 100%;">
       
       <sidenav style="min-height: 100vh; position: fixed; top:48px;"></sidenav>
@@ -67,5 +67,6 @@
   <script src="settings/search/search-data/search-data.module.js"></script>
   <script src="settings/search/search-data/search-data.component.js"></script>
   <script src="settings/search/search-data/search-data.service.js"></script>
+  <script src="settings/search/search-data/popup/popup.js"></script>
 </body>
 </html>

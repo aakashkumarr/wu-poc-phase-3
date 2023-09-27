@@ -10,7 +10,7 @@
                     <th class="text-black" style="border: 1px solid gray;">Rec Curr</th>
                     <th class="text-black" style="border: 1px solid gray;">Pay Curr</th>
                 </tr>
-                <tr ng-repeat="row in array | filter:filter">
+                <tr ng-repeat="row in array | filter:filter" ng-click="popup(row)">
                     <!-- <td class="text-black"> {{row.type}} </td> -->
                     <td class="text-black"> {{row.mctn}} </td>
                     <td class="text-black"> {{row.date | date}} </td>
