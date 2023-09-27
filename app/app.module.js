@@ -11,22 +11,22 @@ angular.module('myApp', [
 ])
 .service('AuthService', function() {})
 .controller('myCtrl', ['$http', '$rootScope', 'AuthService','$location', function($http, $rootScope,AuthService,$location) {
-  this.currentPath = $location.path();
+  // this.currentPath = $location.path();
 
-  this.showHome = function() {
-    console.log(this.currentPath);
-    return this.currentPath === '/';
-  };
+  // this.showHome = function() {
+  //   console.log(this.currentPath);
+  //   return this.currentPath === '/';
+  // };
 
-  this.showSettings = function() {
-    console.log(this.currentPath);
-    return this.currentPath === '/settings';
-  };
+  // this.showSettings = function() {
+  //   console.log(this.currentPath);
+  //   return this.currentPath === '/settings';
+  // };
 
-  this.showSearch = function() {
-    console.log(this.currentPath);
-    return this.currentPath === '/settings/search';
-  };
+  // this.showSearch = function() {
+  //   console.log(this.currentPath);
+  //   return this.currentPath === '/settings/search';
+  // };
 
   this.getData = function() {
     $http.get('https://shiny-space-lamp-wwv44r5xr44fvjxq-3000.app.github.dev/', {
