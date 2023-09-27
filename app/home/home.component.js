@@ -1,7 +1,7 @@
 'use strict';
 
 angular.
-  module('home').
+  module('home',[]).
   component('home', {
     templateUrl: 'home/home.template.html',
     // template:'<h1> hello </h1>',

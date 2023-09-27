@@ -14,6 +14,8 @@ module.exports = function(config) {
       'lib/angular-route/angular-route.min.js',
       'lib/angular-mocks/angular-mocks.js',
       'app.js',
+      'home/**/*.js',
+      'shared/services/**/*.js',
       'settings/search/search.component.spec.js',
       // 'settings/search/search.component.js',
       // 'settings/search/search.module.js'
