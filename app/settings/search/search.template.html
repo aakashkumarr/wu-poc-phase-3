@@ -1,161 +1,170 @@
 <!-- < class="search-section" style="margin-top: 60px; margin-bottom: 60px;"> -->
 <!-- <h6 class="text-black"> <a href="#!/" class="text-black">Home</a> > <a href="#!/settings" class="text-black">Settings</a> > <a href="#!/settings/search" class="text-black"> Transaction Search </a> </h6> -->
 
-<div class="searchContainer">
+<div class="row">
 
-    <form ng-submit="$ctrl.submitForm()">
+    <div class="col-4">
+        <div class="searchContainer">
 
-        <div class="searchForm">
+            <form ng-submit="$ctrl.submitForm()">
 
-            <h2>Transaction Criteria</h2>
+                <div class="searchForm">
 
-            <div class="form-floating">
+                    <h2>Transaction Criteria</h2>
 
-                <input ng-model="mtcn" type="number" class="form-control" name="" id="floatingTextarea"
-                    placeholder="MTCN" />
+                    <div class="form-floating">
 
-                <label class="labell" for="floatingTextarea">MTCN</label>
+                        <input ng-model="mtcn" type="number" class="form-control" name="" id="floatingTextarea"
+                            placeholder="MTCN" />
 
-            </div>
+                        <label class="labell" for="floatingTextarea">MTCN</label>
 
-
-            <div class="form-floating">
-                <lable class="labell" for="floatingTextarea">Transaction Date</lable>
-
-                <input ng-model="date" type="date" class="form-control" name="" id="floatingTextarea"
-                    placeholder="Transaction Date" />
-
-            </div>
-
-            <div class="form-floating2">
-                <lable class="labell" for="floatingTextarea">Direction</lable>
-
-                <select ng-model="direction" class="form-select" aria-label="Default select example">
-
-                    <!-- <option selected for="floatingTextarea">Direction</option> -->
-
-                    <option value="send">Send</option>
-
-                    <option value="received">Received</option>
-
-                </select>
+                    </div>
 
 
-            </div>
+                    <div class="form-floating">
+                        <lable class="labell" for="floatingTextarea">Transaction Date</lable>
 
-            <div class="form-floating2">
-                <lable class="labell" for="floatingTextarea">Status</lable>
+                        <input ng-model="date" type="date" class="form-control" name="" id="floatingTextarea"
+                            placeholder="Transaction Date" />
 
+                    </div>
 
-                <select ng-model="status" class="form-select" aria-label="Default select example">
+                    <div class="form-floating2">
+                        <lable class="labell" for="floatingTextarea">Direction</lable>
 
-                    <!-- <option selected for="floatingTextarea">Status</option> -->
+                        <select ng-model="direction" class="form-select" aria-label="Default select example">
 
-                    <option value="paid">Paid</option>
+                            <!-- <option selected for="floatingTextarea">Direction</option> -->
 
-                    <option value="unpaid">Unpaid</option>
+                            <option value="send">Send</option>
 
-                </select>
+                            <option value="received">Received</option>
 
-
-
-
-            </div>
-
-            <div class="form-floating2">
-                <lable class="labell" for="floatingTextarea">Fixed Transaction</lable>
-
-                <select ng-model="fixedTransaction" class="form-select" aria-label="Default select example">
-
-                    <!-- <option selected for="floatingTextarea">Fixed Transaction</option> -->
-                    <option value="SEND">Send</option>
-
-                    <option value="RECIEVED">Received</option>
-                </select>
+                        </select>
 
 
-            </div>
+                    </div>
 
-            <div class="form-floating2">
-                <lable class="labell" for="floatingTextarea">Recording Country</lable>
+                    <div class="form-floating2">
+                        <lable class="labell" for="floatingTextarea">Status</lable>
 
 
-                <select ng-model="recordingCountry" class="form-select" aria-label="Default select example">
+                        <select ng-model="status" class="form-select" aria-label="Default select example">
 
-                    <!-- <option selected for="floatingTextarea">Recording Country</option> -->
-                    <option value="USA">USA</option>
-                    <option value="India">India</option>
-                    <option value="Mexico">Mexico</option>
-                    <option value="Philippines">Philippines</option>
-                    <option value="Colombia">Colombia</option>
-                    <option value=" Cuba">Cuba</option>
-                    <option value="Australia">Australia</option>
-                    <option value="Bhutan">Bhutan</option>
+                            <!-- <option selected for="floatingTextarea">Status</option> -->
+
+                            <option value="paid">Paid</option>
+
+                            <option value="unpaid">Unpaid</option>
+
+                        </select>
 
 
 
-                </select>
+
+                    </div>
+
+                    <div class="form-floating2">
+                        <lable class="labell" for="floatingTextarea">Fixed Transaction</lable>
+
+                        <select ng-model="fixedTransaction" class="form-select" aria-label="Default select example">
+
+                            <!-- <option selected for="floatingTextarea">Fixed Transaction</option> -->
+                            <option value="SEND">Send</option>
+
+                            <option value="RECIEVED">Received</option>
+                        </select>
 
 
-            </div>
+                    </div>
 
-            <div class="form-floating2">
-                <lable class="labell" for="floatingTextarea">Pay Out Country</lable>
-
-
-                <select ng-model="payOut" class="form-select" aria-label="Default select example">
-
-                    <!-- <option selected for="floatingTextarea">Pay Out Country</option> -->
-                    <option value="USA">USA</option>
-                    <option value="India">India</option>
-                    <option value="Mexico">Mexico</option>
-                    <option value="Philippines">Philippines</option>
-                    <option value="Colombia">Colombia</option>
-                    <option value=" Cuba">Cuba</option>
-                    <option value="Australia">Australia</option>
-                    <option value="Bhutan">Bhutan</option>
-
-                </select>
+                    <div class="form-floating2">
+                        <lable class="labell" for="floatingTextarea">Recording Country</lable>
 
 
-            </div>
+                        <select ng-model="recordingCountry" class="form-select" aria-label="Default select example">
 
-            <div class="form-floating2">
-                <lable class="labell" for="floatingTextarea">Sending Side Currency</lable>
-
-
-                <select ng-model="sendingSideCurrency" class="form-select" aria-label="Default select example">
-
-                    <!-- <option selected for="floatingTextarea">Sending Side Currency</option> -->
-
-                    <option value="USD">USD</option>
-                    <option value="EUR">EUR</option>
-                    <option value="INR">INR</option>
-                    <option value="MXN">MXN</option>
-                    <option value="BHD">BHD</option>
-                    <option value="CYN">CYN</option>
-                    <option value="CAD">CAD</option>
-                    <option value="GBD">GBD</option>
-                    <option value="KRW">KRW</option>
-
-                </select>
+                            <!-- <option selected for="floatingTextarea">Recording Country</option> -->
+                            <option value="USA">USA</option>
+                            <option value="India">India</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value=" Cuba">Cuba</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Bhutan">Bhutan</option>
 
 
-            </div>
 
-            <div>
+                        </select>
 
-                <button class="btn" ng-click="$ctrl.search()">search</button>
 
-            </div>
+                    </div>
+
+                    <div class="form-floating2">
+                        <lable class="labell" for="floatingTextarea">Pay Out Country</lable>
+
+
+                        <select ng-model="payOut" class="form-select" aria-label="Default select example">
+
+                            <!-- <option selected for="floatingTextarea">Pay Out Country</option> -->
+                            <option value="USA">USA</option>
+                            <option value="India">India</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="Philippines">Philippines</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value=" Cuba">Cuba</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Bhutan">Bhutan</option>
+
+                        </select>
+
+
+                    </div>
+
+                    <div class="form-floating2">
+                        <lable class="labell" for="floatingTextarea">Sending Side Currency</lable>
+
+
+                        <select ng-model="sendingSideCurrency" class="form-select" aria-label="Default select example">
+
+                            <!-- <option selected for="floatingTextarea">Sending Side Currency</option> -->
+
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="INR">INR</option>
+                            <option value="MXN">MXN</option>
+                            <option value="BHD">BHD</option>
+                            <option value="CYN">CYN</option>
+                            <option value="CAD">CAD</option>
+                            <option value="GBD">GBD</option>
+                            <option value="KRW">KRW</option>
+
+                        </select>
+
+
+                    </div>
+
+                    <div>
+
+                        <button class="btn" ng-click="$ctrl.search()">search</button>
+
+                    </div>
+
+                </div>
+
+            </form>
 
         </div>
 
-    </form>
 
+    </div>
+    <div class="col-8">
+        <searchdata></searchdata>
+    </div>
 </div>
 
-<searchdata></searchdata>
 
 
 
