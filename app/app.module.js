@@ -8,7 +8,8 @@ angular.module('myApp', [
  'sidenav',
   'settings',
   'search',
-  'searchdata'
+  'searchdata',
+  'pagination'
 ])
 .service('AuthService', function() {})
 .controller('myCtrl', ['$http', '$rootScope', 'AuthService','$location', function($http, $rootScope,AuthService,$location) {

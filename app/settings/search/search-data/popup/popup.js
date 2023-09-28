@@ -82,6 +82,7 @@ app.controller('welcmController', ['$scope', '$rootScope', function ($scope, $ro
         // Create a temporary <a> element to trigger the download
         var a = document.createElement('a');
         a.href = url;
+
         a.download = 'transaction.xml'; // Specify the filename for the downloaded file
 
         // Trigger a click event on the <a> element to initiate the download
@@ -95,12 +96,15 @@ app.controller('welcmController', ['$scope', '$rootScope', function ($scope, $ro
     // Function to convert JSON to XML manually
     function jsonToXml(json) {
         var xml = '<?xml version="1.0" encoding="UTF-8" ?>\n';
+
         xml += '<transaction>\n';
+
         for (var key in json) {
             if (json.hasOwnProperty(key)) {
                 xml += '<' + key + '>' + json[key] + '</' + key + '>\n';
             }
         }
+
         xml += '</transaction>';
         return xml;
     }

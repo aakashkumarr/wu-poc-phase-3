@@ -19,7 +19,8 @@ angular.
 
         // template:'<h1> hello </h1>',
 
-        controller: ['$scope','$rootScope', function SearchDataController($scope,$rootScope) {
+        controller: ['$scope','$rootScope','pagination', function SearchDataController($scope,$rootScope,pagination) {
+
             $scope.array = [
                 {
                     "mctn": "8488161883",
@@ -461,7 +462,10 @@ angular.
                     $scope.currency = data.currency
                 // Output: "Hello from Module A"
             });
-
+$rootScope.$on("changeTableRow",function(event,row){
+console.log("rownumber",row)
+$scope.array=pagination.createPage($scope.array,row)[0]
+})
             $scope.filter = function (row) {
 
                 if ($scope.mtcn === row.mtcn || $scope.transDate === row.date || $scope.direction === row.direction || $scope.status === row.status || $scope.fixedTransaction === row.fixedTransaction || $scope.payOut === row.payOutCountry || $scope.recordingCountry === row.recordingCountry || $scope.currency === row.sendingSideCurrency) {
@@ -471,6 +475,8 @@ angular.
                 }
 
             };
+
+
             $scope.popupVisible = true;
 
             $scope.popup = function (row) {
