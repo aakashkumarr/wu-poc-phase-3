@@ -778,9 +778,15 @@ td,th{
   padding-inline: 0.4rem;
   padding-block: 0.2rem;
 }
+tbody > tr:hover {
+  background-color: rgba(110, 109, 109, 0.3)  ;
+  cursor: pointer;
+  transition: all 50ms linear;
+}
 
 th {
   background-color: gray;
+  color:#fff !important;
 }
 
 tr {
