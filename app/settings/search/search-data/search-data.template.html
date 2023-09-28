@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 <!-- <section class="table-section">
     <div class="card table-card">
         <table class="table table-sm">
+=======
+<section>
+    <div class="card" style="width: 100%; padding: 10px; margin-top: 0px;">
+        <table>
+>>>>>>> 59b7242f8b55c31758ed24c873296a765bd821e2
             <thead>
                 <tr>
                     <th class="text-black" style="border: 1px solid gray;">Type</th>
@@ -11,6 +17,7 @@
                     <th class="text-black" style="border: 1px solid gray;">Rec Curr</th>
                     <th class="text-black" style="border: 1px solid gray;">Pay Curr</th>
                     <th class="text-black" style="border: 1px solid gray;">Status</th>
+<<<<<<< HEAD
                     <th class="text-black" style="border: 1px solid gray;">Sending Side Currency</th>
                 </tr>
                 <tr ng-repeat="row in array | filter:filter">
@@ -24,10 +31,41 @@
                     <td class="text-black"> {{row.status}} </td>
                     <td class="text-black"> {{row.sendingSideCurrency}} </td> 
                 </tr>
+=======
+                    <th class="text-black" style="border: 1px solid gray;">Sending side curr</th>
+
+                </tr>
+
+                <!-- <tr ng-repeat="row in array.mockData | filter:filter">
+                    <td class="text-black"> {{row.name}} </td>
+                    <td class="text-black"> {{row.salary}} </td>
+                  
+                    <td class="text-black"> {{row.married}} </td>
+                   
+                </tr> -->
+>>>>>>> 59b7242f8b55c31758ed24c873296a765bd821e2
             </thead>
+            <tbody>
+                <tr ng-repeat="row in tableData[currentPage] | filter:filter" ng-click="popup(row)">
+
+                    <td class="text-black"> T </td>
+
+                    <td class="text-black"> {{row.mctn}} </td>
+                    <td class="text-black"> {{row.date | date}} </td>
+                    <td class="text-black"> {{row.direction}} </td>
+                    <td class="text-black"> {{row.fixedTransaction}} </td>
+                    <td class="text-black"> {{row.recordingCountry}} </td>
+                    <td class="text-black"> {{row.payOutCountry}} </td>
+                    <td class="text-black"> {{row.status}} </td>
+                    <td class="text-black"> {{row.sendingSideCurrency}} </td>
+                </tr>
+            </tbody>
+
         </table>
-        
+        <pagination current-page="currentPage+1" total-pages="totalPages" on-page-change="loadDataForPage(pageNumber)">
+        </pagination>
     </div>
+<<<<<<< HEAD
     <pagination ng-if="array.length > 0" current-page="$ctrl.currentPage+1" total-pages="$ctrl.totalPages" on-page-change="loadDataForPage(pageNumber)">
     </pagination>
 </section> -->
@@ -68,3 +106,7 @@
     <button ng-click="$ctrl.export()" class="btn btn-outline-dark align-self-end btn-sm">Export to XML</button>
 </section>
 
+=======
+
+</section>
+>>>>>>> 59b7242f8b55c31758ed24c873296a765bd821e2

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 59b7242f8b55c31758ed24c873296a765bd821e2
 'use strict';
 
 angular.
@@ -16,6 +20,7 @@ angular.
         let self=this
         this.currentPage = 1;
         this.totalPage = 1;
+<<<<<<< HEAD
 
         this.next=function(){
           $rootScope.$broadcast('nextRow',{})
@@ -28,6 +33,43 @@ angular.
           console.log(self.rowsPerPage)
           $rootScope.$broadcast('changeTableRow',self.rowsPerPage)
         }
+=======
+        this.pageSize=20;
+        this.updatePageitems=function(){
+            let startIndex=(this.currentPage-1)*this.pageSize;
+            this.pageItems=(this.data.slice(startIndex,startIndex+this.pageSize))
+        }
+        this.next=function(){
+          $rootScope.$broadcast('nextRow',{})
+        if(this.currentPage>this.numPages()){
+            this.currentPage--;
+            this.updatePageitems();
+        }  
+        }
+        this.prev=function(){
+          $rootScope.$broadcast('prevRow',{})
+          if(this.currentPage<this.numPages()){
+            this.currentPage++;
+            this.updatePageitems();
+        }  
+        }
+        this.setPage=function(page){
+            if (page>=1 && page<=this.numPages()){
+                this.currentPage=page;
+                this.updatePageitems();
+            }
+        }
+        this.numPages=function(){
+            return Math.ceil(this.totaItems/this.pageSize)
+        }
+        // this.updatePageitems()
+        // loadDataForPage(1);
+        this.handleChange=function(e){
+          console.log(self.rowsPerPage)
+          $rootScope.$broadcast('changeTableRow',self.rowsPerPage)
+
+        };
+>>>>>>> 59b7242f8b55c31758ed24c873296a765bd821e2
         this.loadDataForPage = function (pageNumber) {
             if (pageNumber >= 1 && pageNumber <= this.totalPages) {
                 this.currentPage = pageNumber;
@@ -42,4 +84,8 @@ angular.
         }
       }
     ]
+<<<<<<< HEAD
   });
+=======
+  });
+>>>>>>> 59b7242f8b55c31758ed24c873296a765bd821e2

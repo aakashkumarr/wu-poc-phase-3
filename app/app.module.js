@@ -4,11 +4,12 @@
 angular.module('myApp', [
   'ngRoute',
   'home',
-  'navbar1',
+  'navbar',
+ 'sidenav',
   'settings',
   'search',
   'searchdata',
-  'pagination',
+  'pagination'
 ])
 .service('AuthService', function() {})
 .controller('myCtrl', ['$http', '$rootScope', 'AuthService','$location', function($http, $rootScope,AuthService,$location) {
