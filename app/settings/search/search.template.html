@@ -1,34 +1,35 @@
+<!-- < class="search-section" style="margin-top: 60px; margin-bottom: 60px;"> -->
+<!-- <h6 class="text-black"> <a href="#!/" class="text-black">Home</a> > <a href="#!/settings" class="text-black">Settings</a> > <a href="#!/settings/search" class="text-black"> Transaction Search </a> </h6> -->
+
 <div class="searchContainer">
-    <form name="myForm" ng-submit="$ctrl.submitForm()">
+
+    <form ng-submit="$ctrl.submitForm()">
+
         <div class="searchForm">
+
             <h2>Transaction Criteria</h2>
 
             <div class="form-floating">
 
-                <input ng-model="mtcn" type="number" class="form-control" name="" id="floatingTextarea" placeholder="MTCN" />
+                <input ng-model="mtcn" type="number" class="form-control" name="" id="floatingTextarea"
+                    placeholder="MTCN" />
 
                 <label class="labell" for="floatingTextarea">MTCN</label>
 
             </div>
 
 
-
-            <!-- <div class="form-floating">
-
-                <input ng-model="date" type="date" class="form-control" name="" id="floatingTextarea" placeholder="Transaction Date" />
-               
-
-            </div> -->
             <div class="form-floating">
                 <lable class="labell" for="floatingTextarea">Transaction Date</lable>
-                
-                <input ng-model="date" type="date" class="form-control" name="" id="floatingTextarea" placeholder="Transaction Date" />
+
+                <input ng-model="date" type="date" class="form-control" name="" id="floatingTextarea"
+                    placeholder="Transaction Date" />
 
             </div>
 
             <div class="form-floating2">
                 <lable class="labell" for="floatingTextarea">Direction</lable>
-                
+
                 <select ng-model="direction" class="form-select" aria-label="Default select example">
 
                     <!-- <option selected for="floatingTextarea">Direction</option> -->
@@ -63,7 +64,7 @@
 
             <div class="form-floating2">
                 <lable class="labell" for="floatingTextarea">Fixed Transaction</lable>
-                
+
                 <select ng-model="fixedTransaction" class="form-select" aria-label="Default select example">
 
                     <!-- <option selected for="floatingTextarea">Fixed Transaction</option> -->
@@ -91,7 +92,7 @@
                     <option value="Australia">Australia</option>
                     <option value="Bhutan">Bhutan</option>
 
-                    
+
 
                 </select>
 
@@ -99,7 +100,7 @@
             </div>
 
             <div class="form-floating2">
-                <lable  class="labell" for="floatingTextarea">Pay Out Country</lable>
+                <lable class="labell" for="floatingTextarea">Pay Out Country</lable>
 
 
                 <select ng-model="payOut" class="form-select" aria-label="Default select example">
@@ -144,7 +145,7 @@
 
             <div>
 
-                <button class="btn">search</button>
+                <button class="btn" ng-click="$ctrl.search()">search</button>
 
             </div>
 
@@ -153,11 +154,10 @@
     </form>
 
 </div>
-<div class="col col-md-7 col-search-data">
-  
-    <searchdata></searchdata>
 
-</div>  
+<searchdata></searchdata>
+
+
 
 
 

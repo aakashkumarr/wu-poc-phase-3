@@ -20,6 +20,7 @@ angular.
         // template:'<h1> hello </h1>',
 
         controller: ['$scope','$rootScope','pagination', function SearchDataController($scope,$rootScope,pagination) {
+
             $scope.array = [
                 {
                     "mctn": "8488161883",
@@ -474,6 +475,7 @@ $scope.array=pagination.createPage($scope.array,row)[0]
                 }
 
             };
+
 
             $scope.popupVisible = true;
 

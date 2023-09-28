@@ -1,13 +1,13 @@
 'use strict';
 
 angular.
-  module('sidenav').
-  component('sidenav', {
-    templateUrl: 'layouts/sidenav/sidenav.template.html',
+  module('navbar1').
+  component('navbar1', {
+    templateUrl: 'layouts/navbar1/navbar1.template.html',
     // template:'<h1> hello </h1>',
     controller: [
-      function SidenavController() {
-        this.activeLink = null;
+      function Navbar1Controller() {
+       this.activeLink = null;
 
        this.setActive = function(index){
            this.activeLink = index

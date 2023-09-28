@@ -12,11 +12,12 @@ angular.
           template: '<settings></settings>'
         }).
         when('/settings/search', {
-          template: '<search></search>'
+          template: '<search class="search-component"></search>'
         }).
         when('/jsonToXml', {
           template: '<jsonToXml></jsonToXml>'
         }).
         otherwise('/');
+
     }
   ]);

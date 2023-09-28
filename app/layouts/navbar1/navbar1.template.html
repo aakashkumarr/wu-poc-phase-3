@@ -1,0 +1,78 @@
+<div id="navbar1" class="nav-container">
+  <div class="horizontal-navbar">
+    <div class="left-content">
+      <img
+        src="../../assets/download1.png"
+        width="180"
+        height="42"
+        alt="logo"
+      />
+      <p>UNIFIED PORTAL</p>
+    </div>
+    <div class="right-content">
+      <div class="language-change">
+        <i class="fa-solid fa-globe"></i>
+        <select name="language" id="language">
+          <option value="en">EN</option>
+          <option value="spa">SPA</option>
+          <option value="hi">HI</option>
+        </select>
+      </div>
+      <div class="user-profile">
+        <div class="user-icon">
+          <i class="fa-solid fa-user fa-xs"></i>
+        </div>
+        <p>ale</p>
+      </div>
+      <div class="logout">
+        <a href="">Logout</a>
+      </div>
+    </div>
+  </div>
+  <div class="vertical-navbar">
+    <div class="top-content">
+      <a
+        class="home"
+        href="#!/"
+        ng-class="{'active' : $ctrl.isActive(1)}"
+        ng-click="$ctrl.setActive(1)"
+        ><i class="fa-solid fa-house fa-xl"></i>Home</a
+      >
+      <a
+        class="home"
+        href="#!/"
+        ng-class="{'active' : $ctrl.isActive(2)}"
+        ng-click="$ctrl.setActive(2)"
+        ><i class="fa-regular fa-user fa-xl"></i>User Mngmnt</a
+      >
+      <a
+        class="home"
+        href="#!/"
+        ng-class="{'active' : $ctrl.isActive(3)}"
+        ng-click="$ctrl.setActive(3)"
+        ><i class="fa-solid fa-chart-simple fa-xl"></i>Reports</a
+      >
+      <a
+        class="home"
+        href="#!/settings"
+        ng-class="{'active' : $ctrl.isActive(4)}"
+        ng-click="$ctrl.setActive(4)"
+        ><i class="fa-solid fa-gear fa-xl"></i>Settings</a
+      >
+
+      <!-- <a class="home" href="#!/"><i class="fa-solid fa-house fa-xl"></i>Home</a>
+        
+        <a class="user-mngmnt" href="#!/user-management"
+          ><i class="fa-regular fa-user fa-xl"></i>User Mngmnt</a
+        >
+  
+        <a class="reports" href="#!/reports"
+          ><i class="fa-solid fa-chart-simple fa-xl"></i>Reports</a
+        >
+  
+        <a class="settings" href="#!/settings"
+          ><i class="fa-solid fa-gear fa-xl"></i>Settings</a
+        > -->
+    </div>
+  </div>
+</div>
