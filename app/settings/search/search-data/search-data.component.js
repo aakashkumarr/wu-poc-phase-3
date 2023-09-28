@@ -19,7 +19,7 @@ angular.
 
         // template:'<h1> hello </h1>',
 
-        controller: ['$scope','$rootScope','pagination', function SearchDataController($scope,$rootScope,pagination) {
+        controller: ['$scope', '$rootScope', 'pagination', function SearchDataController($scope, $rootScope, pagination) {
 
             $scope.array = [
                 {
@@ -447,6 +447,7 @@ angular.
                     "recordingDateLOC": "5/2/11"
                 }
             ]
+            $scope.currentPage=0
             $scope.transDate = null;
             $scope.$on('dataUpdated', function (event, data) {
                 console.log(data);
@@ -462,10 +463,22 @@ angular.
                     $scope.currency = data.currency
                 // Output: "Hello from Module A"
             });
-$rootScope.$on("changeTableRow",function(event,row){
-console.log("rownumber",row)
-$scope.array=pagination.createPage($scope.array,row)[0]
-})
+            $scope.tableData = pagination.createPage($scope.array, $scope.array.length)
+            $scope.totalPages=$scope.tableData.length
+            $rootScope.$on("changeTableRow", function (event, row) {
+                console.log("rownumber", row)
+                $scope.tableData = pagination.createPage($scope.array, row)
+                $scope.totalPages=$scope.tableData.length
+            })
+            $rootScope.$on("nextRow", function (event, row) {
+                console.log("rownumber", row)
+                $scope.currentPage++
+            
+            })
+            $rootScope.$on("prevRow", function (event, row) {
+                console.log("rownumber", row)
+                $scope.currentPage--
+            })
             $scope.filter = function (row) {
 
                 if ($scope.mtcn === row.mtcn || $scope.transDate === row.date || $scope.direction === row.direction || $scope.status === row.status || $scope.fixedTransaction === row.fixedTransaction || $scope.payOut === row.payOutCountry || $scope.recordingCountry === row.recordingCountry || $scope.currency === row.sendingSideCurrency) {

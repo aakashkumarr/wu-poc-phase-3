@@ -45,11 +45,12 @@ angular.
         this.numPages=function(){
             return Math.ceil(this.totaItems/this.pageSize)
         }
-        this.updatePageitems()
-        loadDataForPage(1);
+        // this.updatePageitems()
+        // loadDataForPage(1);
         this.handleChange=function(e){
           console.log(self.rowsPerPage)
           $rootScope.$broadcast('changeTableRow',self.rowsPerPage)
+
         };
         this.loadDataForPage = function (pageNumber) {
             if (pageNumber >= 1 && pageNumber <= this.totalPages) {

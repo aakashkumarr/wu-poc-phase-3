@@ -14,7 +14,7 @@
                     <th class="text-black" style="border: 1px solid gray;">Sending side curr</th>
                     
                 </tr>
-                <tr ng-repeat="row in array | filter:filter" ng-click="popup(row)">
+                <tr ng-repeat="row in tableData[currentPage] | filter:filter" ng-click="popup(row)">
 
                     <td class="text-black"> T </td>
 
@@ -39,7 +39,7 @@
                 </tr> -->
             </thead>
         </table>
-        <pagination ng-if="true" current-page="$ctrl.currentPage+1" total-pages="$ctrl.totalPages" on-page-change="loadDataForPage(pageNumber)">
+        <pagination current-page="currentPage+1" total-pages="totalPages" on-page-change="loadDataForPage(pageNumber)">
         </pagination>
     </div>
 
