@@ -804,10 +804,12 @@ tr {
 }
 .searchContainer {
 
-  width: 35%;
+  width: 100%;
   background-color: #f9f9f9;
   border-radius: 1.5%;
   padding: 2%;
+  max-height: 80vh;
+  overflow: auto;
 }
 
 .searchForm {
