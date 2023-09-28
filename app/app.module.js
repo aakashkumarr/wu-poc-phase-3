@@ -4,7 +4,8 @@
 angular.module('myApp', [
   'ngRoute',
   'home',
-  'navbar1',
+  'navbar',
+ 'sidenav',
   'settings',
   'search',
   'searchdata'
