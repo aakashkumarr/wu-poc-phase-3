@@ -18,7 +18,7 @@ angular.
         this.currentPage = 1;
         this.totalPage = 1;
         this.pageSize=20;
-        // this.rowsPerPage=5
+        this.rowsPerPage="10"
         this.updatePageitems=function(){
             let startIndex=(this.currentPage-1)*this.pageSize;
             this.pageItems=(this.data.slice(startIndex,startIndex+this.pageSize))

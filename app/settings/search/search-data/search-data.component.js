@@ -464,7 +464,7 @@ angular.
                     $scope.currency = data.currency
                 // Output: "Hello from Module A"
             });
-            $scope.tableData = pagination.createPage($scope.array, $scope.array.length)
+            $scope.tableData = pagination.createPage($scope.array,10)
             $scope.totalPages=$scope.tableData.length
             $rootScope.$on("changeTableRow", function (event, row) {
                 console.log("rownumber", row)
