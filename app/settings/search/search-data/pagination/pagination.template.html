@@ -1,0 +1,29 @@
+<div class="pagination">
+  <div>
+    <span class="text-black badge bg-light" style="border:solid 2px #222;">{{$ctrl.currentPage}} /
+      {{$ctrl.totalPages}}</span>
+    <lable for="rowSelect" class="ml-2 mr-2">Rows Per Page :</lable>
+    <!-- <input min="1" max="100" value="10" style="height:2rem; max-width: 8rem;" ng-change="$ctrl.handleChange($event)"
+      ng-model="$ctrl.rowsPerPage" style="width: 4rem;" value="1" class="form-controller" type="number"
+      placeholder="rows" /> -->
+    <select id="rowSelect" ng-change="$ctrl.handleChange($event)" ng-model="$ctrl.rowsPerPage">
+      <option value="5">5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="15">20</option>
+    </select>
+
+    <button ng-click="$ctrl.prev()" class="icon-btn" ng-click="$ctrl.onPageChange($ctrl.currentPage - 1)"
+      ng-disabled="$ctrl.currentPage === 1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#000"
+        class="bi bi-chevron-left" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+      </svg></button>
+    <button ng-click="$ctrl.next()" class="icon-btn" ng-click="$ctrl.onPageChange($ctrl.onPageChange + 1)"
+      ng-disabled="$ctrl.currentPage === $ctrl.totalPages"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+        height="16" fill="#000" class="bi bi-chevron-right" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+      </svg></button>
+  </div>
+</div>

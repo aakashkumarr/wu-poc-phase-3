@@ -765,17 +765,33 @@ border-bottom-color: #fd0 !important;
 table {
   border: 1px solid rgb(99, 99, 99);
   width: 100%;
-  padding: 10px;
-  margin-top: 30px;
+  /* padding: 10px; */
+  /* margin-top: 30px; */
   color: black !important;
+  max-height: 20rem;
+  overflow: auto;
+  position:relative;
+  /* overflow-y: hidden; */
+}
+
+td,th{
+  padding-inline: 0.4rem;
+  padding-block: 0.2rem;
+}
+tbody > tr:hover {
+  background-color: rgba(110, 109, 109, 0.3)  ;
+  cursor: pointer;
+  transition: all 50ms linear;
 }
 
 th {
   background-color: gray;
+  color:#fff !important;
 }
 
 tr {
-  border: 1px solid black;
+  border: none;
+  border-bottom: solid 1px #ccc !important;
 }
 
 /* seacrch form  */
@@ -788,10 +804,12 @@ tr {
 }
 .searchContainer {
 
-  width: 35%;
+  width: 100%;
   background-color: #f9f9f9;
   border-radius: 1.5%;
   padding: 2%;
+  max-height: 80vh;
+  overflow: auto;
 }
 
 .searchForm {
@@ -878,4 +896,32 @@ tr {
 }
 select:focus, select:active{
   outline:0 !important;
+}
+
+.pagination{
+
+  display: flex;
+
+  flex-direction: row;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+}
+.icon-btn{
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  /* padding: .5rem; */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  transition: all 100ms ease-in-out;
+  border-radius: auto;
+}
+.icon-btn:active{
+  background-color: rgba(110, 109, 109, 0.3);
 }

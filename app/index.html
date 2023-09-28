@@ -2,7 +2,9 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,10 +42,9 @@
         ><a href="#!/settings/search" ng-show="$ctrl.showSearch()">Home>Settings>Transaction Search</a></div
       >
         <div class="view-container" ng-view></div>
-      </div>
-      
+      </div> 
+      <div ng-include="'settings/search/search-data/popup/popup.html'"></div> 
   </div>
-
   <!-- <script src="request.js"></script> -->
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular-route/angular-route.js"></script>
@@ -68,5 +69,10 @@
   <script src="settings/search/search-data/search-data.component.js"></script>
   <script src="settings/search/search-data/search-data.service.js"></script>
   <script src="settings/search/search-data/popup/popup.js"></script>
+  <script src="settings/search/search-data/pagination/pagination.module.js"></script>
+  <script src="settings/search/search-data/pagination/pagination.component.js"></script>
+  <script src="settings/search/search-data/pagination/pagination.service.js"></script>
+
 </body>
+
 </html>

@@ -19,7 +19,8 @@ angular.
 
         // template:'<h1> hello </h1>',
 
-        controller: ['$scope','$rootScope', function SearchDataController($scope,$rootScope) {
+        controller: ['$scope', '$rootScope', 'pagination', function SearchDataController($scope, $rootScope, pagination) {
+
             $scope.array = [
                 {
                     "mctn": "8488161883",
@@ -446,11 +447,13 @@ angular.
                     "recordingDateLOC": "5/2/11"
                 }
             ]
+            $scope.currentPage=0
             $scope.transDate = null;
             $scope.$on('dataUpdated', function (event, data) {
                 console.log(data);
                 // $scope.mtcn = data.mtcn;
                 // data.transDate ? $scope.transDate = data.transDate : $scope.transDate = null;
+                console.log(data)
                 $scope.mtcn = data.mtcn ? data.mtcn : null,
                     $scope.transDate = data.transDate,
                     $scope.direction = data.direction,
@@ -461,7 +464,22 @@ angular.
                     $scope.currency = data.currency
                 // Output: "Hello from Module A"
             });
-
+            $scope.tableData = pagination.createPage($scope.array,10)
+            $scope.totalPages=$scope.tableData.length
+            $rootScope.$on("changeTableRow", function (event, row) {
+                console.log("rownumber", row)
+                $scope.tableData = pagination.createPage($scope.array,parseInt(row))
+                $scope.totalPages=$scope.tableData.length
+            })
+            $rootScope.$on("nextRow", function (event, row) {
+                console.log("rownumber", row)
+                $scope.currentPage++
+            
+            })
+            $rootScope.$on("prevRow", function (event, row) {
+                console.log("rownumber", row)
+                $scope.currentPage--
+            })
             $scope.filter = function (row) {
 
                 if ($scope.mtcn === row.mtcn || $scope.transDate === row.date || $scope.direction === row.direction || $scope.status === row.status || $scope.fixedTransaction === row.fixedTransaction || $scope.payOut === row.payOutCountry || $scope.recordingCountry === row.recordingCountry || $scope.currency === row.sendingSideCurrency) {
@@ -471,6 +489,8 @@ angular.
                 }
 
             };
+
+
             $scope.popupVisible = true;
 
             $scope.popup = function (row) {
