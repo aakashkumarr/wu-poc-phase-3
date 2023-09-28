@@ -12,8 +12,18 @@
                     <th class="text-black" style="border: 1px solid gray;">Pay Curr</th>
                     <th class="text-black" style="border: 1px solid gray;">Status</th>
                     <th class="text-black" style="border: 1px solid gray;">Sending side curr</th>
-                    
+
                 </tr>
+
+                <!-- <tr ng-repeat="row in array.mockData | filter:filter">
+                    <td class="text-black"> {{row.name}} </td>
+                    <td class="text-black"> {{row.salary}} </td>
+                  
+                    <td class="text-black"> {{row.married}} </td>
+                   
+                </tr> -->
+            </thead>
+            <tbody>
                 <tr ng-repeat="row in tableData[currentPage] | filter:filter" ng-click="popup(row)">
 
                     <td class="text-black"> T </td>
@@ -26,18 +36,9 @@
                     <td class="text-black"> {{row.payOutCountry}} </td>
                     <td class="text-black"> {{row.status}} </td>
                     <td class="text-black"> {{row.sendingSideCurrency}} </td>
-    
-
-                    
                 </tr>
-                <!-- <tr ng-repeat="row in array.mockData | filter:filter">
-                    <td class="text-black"> {{row.name}} </td>
-                    <td class="text-black"> {{row.salary}} </td>
-                  
-                    <td class="text-black"> {{row.married}} </td>
-                   
-                </tr> -->
-            </thead>
+            </tbody>
+
         </table>
         <pagination current-page="currentPage+1" total-pages="totalPages" on-page-change="loadDataForPage(pageNumber)">
         </pagination>

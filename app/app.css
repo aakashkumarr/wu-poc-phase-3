@@ -765,9 +765,18 @@ border-bottom-color: #fd0 !important;
 table {
   border: 1px solid rgb(99, 99, 99);
   width: 100%;
-  padding: 10px;
-  margin-top: 30px;
+  /* padding: 10px; */
+  /* margin-top: 30px; */
   color: black !important;
+  max-height: 20rem;
+  overflow: auto;
+  position:relative;
+  /* overflow-y: hidden; */
+}
+
+td,th{
+  padding-inline: 0.4rem;
+  padding-block: 0.2rem;
 }
 
 th {
@@ -775,7 +784,8 @@ th {
 }
 
 tr {
-  border: 1px solid black;
+  border: none;
+  border-bottom: solid 1px #ccc !important;
 }
 
 /* seacrch form  */

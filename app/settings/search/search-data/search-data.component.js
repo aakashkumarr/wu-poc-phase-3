@@ -453,6 +453,7 @@ angular.
                 console.log(data);
                 // $scope.mtcn = data.mtcn;
                 // data.transDate ? $scope.transDate = data.transDate : $scope.transDate = null;
+                console.log(data)
                 $scope.mtcn = data.mtcn ? data.mtcn : null,
                     $scope.transDate = data.transDate,
                     $scope.direction = data.direction,
