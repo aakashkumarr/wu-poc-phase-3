@@ -468,7 +468,7 @@ angular.module("searchdata").component("searchdata", {
       //     }
       //     return options;
       //   }
-      $scope.transDate = null;
+
       $scope.$on("dataUpdated", function (event, data) {
         let query = "";
         console.log(data);
@@ -485,6 +485,7 @@ angular.module("searchdata").component("searchdata", {
           console.log("fetch data:", res);
           array = res.data;
           $scope.tableData = pagination.createPage(array, 10);
+          $scope.currentPage=0
           $scope.totalPages = $scope.tableData.length;
           console.log($scope.tableData);
           // console.log("mapped options: ", mapOptions(array));
