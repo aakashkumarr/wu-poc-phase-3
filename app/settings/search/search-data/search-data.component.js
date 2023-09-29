@@ -454,34 +454,41 @@ angular.module("searchdata").component("searchdata", {
         // console.log("mapped options: ", mapOptions(array));
       });
 
-    //   function mapOptions(data) {
-    //     let options = {};
-    //     for (let object of data) {
-    //       for (let key in object) {
-    //         if (typeof options[key] !== "object") {
-    //           options[key] = {};
-    //           options[key][object[key]] = object[key];
-    //         } else {
-    //           options[key][object[key]] = object[key];
-    //         }
-    //       }
-    //     }
-    //     return options;
-    //   }
+      //   function mapOptions(data) {
+      //     let options = {};
+      //     for (let object of data) {
+      //       for (let key in object) {
+      //         if (typeof options[key] !== "object") {
+      //           options[key] = {};
+      //           options[key][object[key]] = object[key];
+      //         } else {
+      //           options[key][object[key]] = object[key];
+      //         }
+      //       }
+      //     }
+      //     return options;
+      //   }
       $scope.transDate = null;
       $scope.$on("dataUpdated", function (event, data) {
+        let query = "";
         console.log(data);
         // $scope.mtcn = data.mtcn;
         // data.transDate ? $scope.transDate = data.transDate : $scope.transDate = null;
         console.log(data);
-        ($scope.mtcn = data.mtcn ? data.mtcn : null),
-          ($scope.transDate = data.transDate),
-          ($scope.direction = data.direction),
-          ($scope.status = data.status),
-          ($scope.fixedTransaction = data.fixedTransaction),
-          ($scope.recordingCountry = data.recordingCountry),
-          ($scope.payOut = data.payOut),
-          ($scope.currency = data.currency);
+        for (let key in data) {
+          if (data[key] == undefined) continue;
+          if (key == "date") query += `${key}=${new Date(data[key]).toISOString().split('T')[0]}&`;
+          else query += `${key}=${data[key]}&`;
+        }
+        console.log(query)
+        $http.get(`http://localhost:3000/transactions?${query}`).then((res) => {
+          console.log("fetch data:", res);
+          array = res.data;
+          $scope.tableData = pagination.createPage(array, 10);
+          $scope.totalPages = $scope.tableData.length;
+          console.log($scope.tableData);
+          // console.log("mapped options: ", mapOptions(array));
+        });
         // Output: "Hello from Module A"
       });
       $scope.tableData = pagination.createPage(array, 10);
@@ -529,44 +536,46 @@ angular.module("searchdata").component("searchdata", {
       $scope.convertJsonArrayToXml = function () {
         // Function to convert JSON object to XML string
         function jsonToXml(json) {
-            var xml = '<transactions>';
-            angular.forEach(json, function (item) {
-                xml += '<transaction>';
-                for (var key in item) {
-                    if (item.hasOwnProperty(key)) {
-                        xml += '<' + key + '>' + item[key] + '</' + key + '>\n';
-                    }
-                }
-                xml += '</transaction>';
-            });
-            xml += '</transactions>';
-            return xml;
+          var xml = "<transactions>";
+          angular.forEach(json, function (item) {
+            xml += "<transaction>";
+            for (var key in item) {
+              if (item.hasOwnProperty(key)) {
+                xml += "<" + key + ">" + item[key] + "</" + key + ">\n";
+              }
+            }
+            xml += "</transaction>";
+          });
+          xml += "</transactions>";
+          return xml;
         }
 
         // Convert JSON to XML
-        console.log('before json',array)
-        let jsonData=array.map(d=>{delete d["$$hashKey"]; return {...d}})
-        var xmlData = '<?xml version="1.0" encoding="UTF-8" ?>' + jsonToXml(jsonData);
+        console.log("before json", array);
+        let jsonData = array.map((d) => {
+          delete d["$$hashKey"];
+          return { ...d };
+        });
+        var xmlData =
+          '<?xml version="1.0" encoding="UTF-8" ?>' + jsonToXml(jsonData);
 
         // Create a Blob containing the XML data
-        var blob = new Blob([xmlData], { type: 'application/xml' });
+        var blob = new Blob([xmlData], { type: "application/xml" });
 
         // Create a temporary URL for the Blob
         var url = URL.createObjectURL(blob);
 
         // Create a link element for downloading the XML
-        var a = document.createElement('a');
+        var a = document.createElement("a");
         a.href = url;
-        a.download = 'transactions.xml';
+        a.download = "transactions.xml";
 
         // Trigger a click event on the link to start the download
         a.click();
 
         // Clean up by revoking the Blob URL
         URL.revokeObjectURL(url);
-
-    };
+      };
     },
   ],
 });
-
