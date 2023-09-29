@@ -859,6 +859,7 @@ tr {
   padding: 8px;
 
   border: none;
+  border-radius: 0px;
 
   border-bottom: solid 2px #ccc !important;
   /* Set the bottom border color */
@@ -876,6 +877,8 @@ tr {
 select:focus,
 select:active {
   outline: 0 !important;
+  box-shadow: none !important;
+  border-bottom-color: #fd0 !important;
 }
 
 .pagination {
