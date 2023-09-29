@@ -42,7 +42,7 @@ angular.module("search").component("search", {
           fixedTransaction: $scope.fixedTransaction,
           recordingCountry: $scope.recordingCountry,
           payOutCountry: $scope.payOut,
-          sendingSideCurrency: $scope.sendingSideCurrency,
+          sendingSideCurrencyCode: $scope.sendingSideCurrency,
         });
         console.log("button working");
       };

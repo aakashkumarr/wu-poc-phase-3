@@ -642,6 +642,7 @@ label {
   border: none;
   padding-inline: 0;
   color: #222 !important;
+  background-color: inherit;
 }
 
 .form-control {
@@ -650,6 +651,7 @@ label {
   outline: none !important;
   border: none !important;
   box-shadow: none !important;
+  background-color: inherit !important  ;
 
   /* padding-left: -10px; */
   border-bottom: solid 2px #ccc !important;
@@ -874,8 +876,8 @@ tr {
 
   -moz-appearance: none;
 }
-select:focus,
-select:active {
+.form-floating2  select:focus,
+.form-floating2  select:active {
   outline: 0 !important;
   box-shadow: none !important;
   border-bottom-color: #fd0 !important;
