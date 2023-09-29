@@ -36,13 +36,13 @@ angular.module("search").component("search", {
       this.submitForm = function () {
         $scope.$broadcast("dataUpdated", {
           mtcn: $scope.mtcn,
-          transDate: $scope.date,
+          date: $scope.date,
           direction: $scope.direction,
           status: $scope.status,
           fixedTransaction: $scope.fixedTransaction,
           recordingCountry: $scope.recordingCountry,
-          payOut: $scope.payOut,
-          currency: $scope.sendingSideCurrency,
+          payOutCountry: $scope.payOut,
+          sendingSideCurrency: $scope.sendingSideCurrency,
         });
         console.log("button working");
       };
