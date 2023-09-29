@@ -1,45 +1,71 @@
-describe("searchdata", function () {
-    beforeEach(module("searchdata"));
-  
-    describe("SearchDataController", function () {
-      var $componentController;
-      var ctrl;
-      var $rootScope;
-      var $scope;
-  
-      beforeEach(inject(function (_$componentController_, _$rootScope_, _$injector_) {
-        $componentController = _$componentController_;
-        $rootScope = _$rootScope_;
-        $scope = $rootScope.$new();
-  
-        ctrl = $componentController("searchdata");
-      }));
-  
-      it("should initialize the message", function (done) {
-        console.log(ctrl);
-        expect(ctrl.message).toBe(" Search data works!");
-        done();
-      });
+describe('SearchController', function() {
+  var $componentController;
+  var $rootScope;
+  var $httpBackend;
+  var controller;
 
-    //   it("should filter rows based on filter criteria", function (done) {
-    //     var row = {
-    //         mctn: "8488161883",
-    //         date: "11/10/2022",
-    //         fixedTransaction: 3,
-    //         recordingCountry: "India",
-    //         payOutCountry: "United States",
-    //         status: "success",
-    //         direction: "send",
-    //         sendingSideCurrency: "Rupee"
-    //     };
+  beforeEach(module('search'));
 
-    //     $scope.mctn = '8488161883';
-    //     $scope.date = "11/10/2022";
+  beforeEach(inject(function(_$componentController_, _$rootScope_, _$httpBackend_) {
+    $componentController = _$componentController_;
+    $rootScope = _$rootScope_;
+    $httpBackend = _$httpBackend_;
+  }));
 
-    //     var result = $scope.filter(row);
-
-    //     expect(result).toBe(true);
-    //   })
+  beforeEach(function() {
+    controller = $componentController('search', {
+      $http: $httpBackend,
+      $scope: $rootScope.$new()
     });
   });
+
+  afterEach(function() {
+    $httpBackend.verifyNoOutstandingExpectation();
+    $httpBackend.verifyNoOutstandingRequest();
+  });
+
+  it('should initialize the controller', function() {
+    console.log(controller);
+    expect(controller).toBeDefined();
+  });
+
+  it('should call submitForm and broadcast dataUpdated event', function() {
+
+    // var bindings= {};
+    // var ctrl=$componentController('searc', null, bindings);
+
+
+    // var eventData = {
+    //   mtcn: "123456",
+    //   transDate: "2023-09-24",
+    //   direction: 'send',
+    //   status: 'paid',
+    //   fixedTransaction: 'SEND',
+    //   recordingCountry: 'USA',
+    //   payOut: 'USA',
+    //   currency: 'USD'
+    // };           
+
+    var eventData = {
+      mtcn: undefined,
+      transDate: undefined,
+      direction: undefined,
+      status: undefined,
+      fixedTransaction: undefined,
+      recordingCountry: undefined,
+      payOut: undefined,
+      currency: undefined
+    };
+
+    spyOn($rootScope, '$broadcast');
+    // ctrl.submitForm(eventData);
   
+    controller.submitForm();
+    
+    expect($rootScope.$broadcast).toHaveBeenCalledWith('dataUpdated', eventData);
+   
+  });
+
+  // Add more test cases as needed
+
+});
