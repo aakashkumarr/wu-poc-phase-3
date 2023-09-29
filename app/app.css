@@ -775,8 +775,9 @@ th {
   padding-block: 0.5rem;
   /* padding-block: 0.2rem; */
   /* min-width: 5rem;  */
-  text-align: center;
+  text-align: center !important;
   text-wrap: nowrap;
+  text-overflow: ellipsis;
 }
 tbody > tr:hover {
   background-color: rgba(110, 109, 109, 0.3);
