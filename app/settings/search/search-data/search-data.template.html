@@ -5,7 +5,6 @@
         </div>
         
         <table>
-            <thead>
                 <tr>
                     <th class="text-black" style="border: 1px solid gray;">Type</th>
                     <th class="text-black" style="border: 1px solid gray;">MTCN</th>
@@ -26,8 +25,6 @@
                     <td class="text-black"> {{row.married}} </td>
                    
                 </tr> -->
-            </thead>
-            <tbody>
                 <tr ng-repeat="row in tableData[currentPage] | filter:filter" ng-click="popup(row)">
 
                     <td class="text-black"> T </td>
@@ -41,8 +38,6 @@
                     <td class="text-black"> {{row.status}} </td>
                     <td class="text-black"> {{row.sendingSideCurrency}} </td>
                 </tr>
-            </tbody>
-
         </table>
         <pagination current-page="currentPage+1" total-pages="totalPages" on-page-change="loadDataForPage(pageNumber)">
         </pagination>
