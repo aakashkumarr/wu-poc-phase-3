@@ -25,11 +25,11 @@
                     <td class="text-black"> {{row.married}} </td>
                    
                 </tr> -->
-                <tr ng-repeat="row in tableData[currentPage] | filter:filter" ng-click="popup(row)">
+                <tr ng-repeat="row in tableData[currentPage]" ng-click="popup(row)">
 
                     <td class="text-black"> T </td>
 
-                    <td class="text-black"> {{row.mctn}} </td>
+                    <td class="text-black"> {{row.mtcn}} </td>
                     <td class="text-black"> {{row.date | date}} </td>
                     <td class="text-black"> {{row.direction}} </td>
                     <td class="text-black"> {{row.fixedTransaction}} </td>
