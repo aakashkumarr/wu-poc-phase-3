@@ -772,11 +772,12 @@ table {
 td,
 th {
   padding-inline: 1rem;
+  padding-block: 0.5rem;
   /* padding-block: 0.2rem; */
   /* min-width: 5rem;  */
   text-align: center;
+  text-wrap: nowrap;
 }
-
 tbody > tr:hover {
   background-color: rgba(110, 109, 109, 0.3);
   cursor: pointer;

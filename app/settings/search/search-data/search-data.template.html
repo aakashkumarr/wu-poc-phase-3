@@ -19,17 +19,17 @@
     </div>
     <table ng-show="tableData.length">
       <tr>
-        <th class="text-black" style="border: 1px solid gray">Type</th>
-        <th class="text-black" style="border: 1px solid gray">MTCN</th>
-        <th class="text-black" style="border: 1px solid gray">Date</th>
-        <th class="text-black" style="border: 1px solid gray">Direction</th>
-        <th class="text-black" style="border: 1px solid gray">
+        <th>Type</th>
+        <th>MTCN</th>
+        <th>Date</th>
+        <th>Direction</th>
+        <th>
           Transaction Type
         </th>
-        <th class="text-black" style="border: 1px solid gray">Rec Curr</th>
-        <th class="text-black" style="border: 1px solid gray">Pay Curr</th>
-        <th class="text-black" style="border: 1px solid gray">Status</th>
-        <th class="text-black" style="border: 1px solid gray">
+        <th>Rec Curr</th>
+        <th>Pay Curr</th>
+        <th>Status</th>
+        <th>
           Sending side curr
         </th>
       </tr>
@@ -45,9 +45,9 @@
         <td class="text-black">T</td>
 
         <td class="text-black">{{row.mtcn}}</td>
-        <td class="text-black">{{row.date | date}}</td>
+        <td class="text-black">{{row.date | date:"yyyy-MM-dd":"UTC"}}</td>
         <td class="text-black">{{row.direction}}</td>
-        <td class="text-black">{{row.fixedTransaction}}</td>
+        <td class="text-black">{{row.transactionType}}</td>
         <td class="text-black">{{row.recordingCountry}}</td>
         <td class="text-black">{{row.payOutCountry}}</td>
         <td class="text-black">
