@@ -17,7 +17,7 @@ angular.module("searchdata").component("searchdata", {
     "pagination",
     "$http",
     function SearchDataController($scope, $rootScope, pagination, $http) {
-      // $scope.array = [
+      // array = [
       //     {
       //         "mctn": "8488161883",
       //         "date": "11/10/2022",
@@ -443,15 +443,15 @@ angular.module("searchdata").component("searchdata", {
       //         "recordingDateLOC": "5/2/11"
       //     }
       // ]
-      $scope.array = [];
+      let array = [];
       $scope.currentPage = 0;
       $http.get("http://localhost:3000/transactions").then((res) => {
         console.log("fetch data:", res);
-        $scope.array = res.data;
-        $scope.tableData = pagination.createPage($scope.array, 10);
+        array = res.data;
+        $scope.tableData = pagination.createPage(array, 10);
         $scope.totalPages = $scope.tableData.length;
         console.log($scope.tableData);
-        // console.log("mapped options: ", mapOptions($scope.array));
+        // console.log("mapped options: ", mapOptions(array));
       });
 
     //   function mapOptions(data) {
@@ -484,11 +484,11 @@ angular.module("searchdata").component("searchdata", {
           ($scope.currency = data.currency);
         // Output: "Hello from Module A"
       });
-      $scope.tableData = pagination.createPage($scope.array, 10);
+      $scope.tableData = pagination.createPage(array, 10);
       $scope.totalPages = $scope.tableData.length;
       $rootScope.$on("changeTableRow", function (event, row) {
         console.log("rownumber", row);
-        $scope.tableData = pagination.createPage($scope.array, parseInt(row));
+        $scope.tableData = pagination.createPage(array, parseInt(row));
         $scope.totalPages = $scope.tableData.length;
       });
       $rootScope.$on("nextRow", function (event, row) {
@@ -526,6 +526,46 @@ angular.module("searchdata").component("searchdata", {
       $scope.closePopup = function () {
         $scope.popupVisible = false;
       };
+      $scope.convertJsonArrayToXml = function () {
+        // Function to convert JSON object to XML string
+        function jsonToXml(json) {
+            var xml = '<transactions>';
+            angular.forEach(json, function (item) {
+                xml += '<transaction>';
+                for (var key in item) {
+                    if (item.hasOwnProperty(key)) {
+                        xml += '<' + key + '>' + item[key] + '</' + key + '>\n';
+                    }
+                }
+                xml += '</transaction>';
+            });
+            xml += '</transactions>';
+            return xml;
+        }
+
+        // Convert JSON to XML
+        console.log('before json',array)
+        let jsonData=array.map(d=>{delete d["$$hashKey"]; return {...d}})
+        var xmlData = '<?xml version="1.0" encoding="UTF-8" ?>' + jsonToXml(jsonData);
+
+        // Create a Blob containing the XML data
+        var blob = new Blob([xmlData], { type: 'application/xml' });
+
+        // Create a temporary URL for the Blob
+        var url = URL.createObjectURL(blob);
+
+        // Create a link element for downloading the XML
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = 'transactions.xml';
+
+        // Trigger a click event on the link to start the download
+        a.click();
+
+        // Clean up by revoking the Blob URL
+        URL.revokeObjectURL(url);
+
+    };
     },
   ],
 });
