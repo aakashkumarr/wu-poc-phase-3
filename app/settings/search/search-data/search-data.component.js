@@ -523,10 +523,10 @@ angular.module("searchdata").component("searchdata", {
         console.log(row);
         $rootScope.$broadcast("popupEvent", row);
       };
-
       $scope.closePopup = function () {
         $scope.popupVisible = false;
       };
     },
   ],
 });
+
