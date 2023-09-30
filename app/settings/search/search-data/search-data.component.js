@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("searchdata").component("searchdata", {
+angular.module("searchdata", []).component("searchdata", {
   templateUrl: "settings/search/search-data/search-data.template.html",
 
   // template: '<h1>Hello</h1>',
