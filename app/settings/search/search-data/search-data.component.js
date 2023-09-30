@@ -36,7 +36,7 @@ angular.module("searchdata").component("searchdata", {
         console.log(data);
         for (let key in data) {
           if (data[key] == undefined) continue;
-          if (key == "date") query += `${key}=${new Date(data[key]).toISOString().split('T')[0]}&`;
+          if (key == "date") query += `${key}=${new Date(data[key].setHours(24)).toISOString().split('T')[0]}&`;
           else query += `${key}=${data[key]}&`;
         }
         console.log(query)
