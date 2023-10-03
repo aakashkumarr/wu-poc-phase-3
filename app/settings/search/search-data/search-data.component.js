@@ -101,7 +101,7 @@ angular.module("searchdata", ['pagination']).component("searchdata", {
           angular.forEach(json, function (item) {
             xml += "<transaction>";
             for (var key in item) {
-              if (item.hasOwnProperty(key)) {
+              if (item.hasOwnProperty(key) && key!='id') {
                 xml += "<" + key + ">" + item[key] + "</" + key + ">\n";
               }
             }
