@@ -16,9 +16,11 @@ angular.
   component('navbar', {
     templateUrl: 'layouts/navbar/navbar.template.html',
     // template:'<h1> hello </h1>',
+
     controller: [ 
       function NavbarController() {
         
+
       }
     ]
   });

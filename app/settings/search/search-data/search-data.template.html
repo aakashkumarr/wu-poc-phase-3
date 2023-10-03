@@ -1,38 +1,71 @@
-<section>
-    <div class="card" style="width: 100%; padding: 10px; margin-top: 0px;">
-        <table>
-            <thead>
-                <tr>
-                    <!-- <th class="text-black" style="border: 1px solid gray;">Type</th> -->
-                    <th class="text-black" style="border: 1px solid gray;">MTCN</th>
-                    <th class="text-black" style="border: 1px solid gray;">Date</th>
-                    <th class="text-black" style="border: 1px solid gray;">Transaction Type</th>
-                    <th class="text-black" style="border: 1px solid gray;">Rec Curr</th>
-                    <th class="text-black" style="border: 1px solid gray;">Pay Curr</th>
-                </tr>
-                <tr ng-repeat="row in array | filter:filter" ng-click="popup(row)">
-                    <!-- <td class="text-black"> {{row.type}} </td> -->
-                    <td class="text-black"> {{row.mctn}} </td>
-                    <td class="text-black"> {{row.date | date}} </td>
-                    <td class="text-black"> {{row.direction}} </td>
-                    <td class="text-black"> {{row.fixedTransaction}} </td>
-                    <td class="text-black"> {{row.recordingCountry}} </td>
-                    <td class="text-black"> {{row.payOutCountry}} </td>
-                    <td class="text-black"> {{row.status}} </td>
-                    <td class="text-black"> {{row.sendingSideCurrency}} </td>
-    
+<section style="height: 100%">
+  <div class="card" style="width: 100%; padding: 10px; height: 100%">
+    <div
+      ng-hide="tableData.length"
+      class="d-flex flex-column justify-content-center align-items-center h-100 text-gray"
+    >
+      <h1 class="text-center mt-4">No records found :(</h1>
+      <p>try to find using other fields</p>
+    </div>
+    <div ng-show="tableData.length" class="container" style="height: 60px">
+      <button
+        type="button"
+        class="btn btn-primary mt-0"
+        style="width: 100px !important; float: right"
+        ng-click="convertJsonArrayToXml()"
+      >
+        Export
+      </button>
+    </div>
+    <table   ng-show="tableData.length">
+      <tr class="sticky-header">
+        <th>Type</th>
+        <th>MTCN</th>
+        <th>Date</th>
+        <th>Direction</th>
+        <th>
+          Transaction Type
+        </th>
+        <th>Rec Curr</th>
+        <th>Pay Curr</th>
+        <th>Status</th>
+        <th>
+          Sending side curr
+        </th>
+      </tr>
 
-                    
-                </tr>
-                <!-- <tr ng-repeat="row in array.mockData | filter:filter">
+      <!-- <tr ng-repeat="row in array.mockData | filter:filter">
                     <td class="text-black"> {{row.name}} </td>
                     <td class="text-black"> {{row.salary}} </td>
                   
                     <td class="text-black"> {{row.married}} </td>
                    
                 </tr> -->
-            </thead>
-        </table>
-        
-    </div>
+      <tr ng-repeat="row in tableData[currentPage]" ng-click="popup(row)">
+        <td class="text-black">T</td>
+
+        <td class="text-black">{{row.mtcn}}</td>
+        <td class="text-black">{{row.date }}</td>
+        <td class="text-black">{{row.direction}}</td>
+        <td class="text-black">{{row.transactionType}}</td>
+        <td class="text-black">{{row.recordingCountry}}</td>
+        <td class="text-black">{{row.payOutCountry}}</td>
+        <td class="text-black">
+          <span
+            class="badge"
+            ng-class="{'bg-success':row.status=='paid','bg-warning':row.status!=='paid'}"
+            >{{row.status}}</span
+          >
+        </td>
+        <td class="text-black">{{row.sendingSideCurrency}}</td>
+      </tr>
+    </table>
+    <pagination
+      ng-show="tableData.length"
+      current-page="currentPage+1"
+      total-pages="totalPages"
+      on-page-change="loadDataForPage(pageNumber)"
+    >
+    </pagination>
+  </div>
 </section>

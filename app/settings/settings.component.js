@@ -1,7 +1,7 @@
 'use strict';
 
 angular.
-  module('settings').
+  module('settings', []).
   component('settings', {
     templateUrl: 'settings/settings.template.html',
     // template:'<h1> hello </h1>',

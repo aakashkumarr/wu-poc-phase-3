@@ -14,6 +14,10 @@ angular.
         when('/settings/search', {
           template: '<search class="search-component"></search>'
         }).
-        otherwise('/home');
+        when('/jsonToXml', {
+          template: '<jsonToXml></jsonToXml>'
+        }).
+        otherwise('/');
+
     }
   ]);
