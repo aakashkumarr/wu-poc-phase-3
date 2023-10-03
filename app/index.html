@@ -35,12 +35,12 @@
     <div style="display: flex; flex-direction:row; justify-content: space-between; width: 100%;">
       
       <sidenav style="min-height: 100vh; position: fixed; top:48px;"></sidenav>
-      <div style="width:100%">
+      <!-- <div style="width:100%">
         <div class="links-style"
         ><a href="#!/" ng-show="$ctrl.showHome()">Home</a
         ><a href="#!/settings" ng-show="$ctrl.showSettings()">Home>Settings</a
         ><a href="#!/settings/search" ng-show="$ctrl.showSearch()">Home>Settings>Transaction Search</a></div
-      >
+      > -->
         <div class="view-container" ng-view></div>
       </div> 
       <div ng-include="'settings/search/search-data/popup/popup.html'"></div> 
