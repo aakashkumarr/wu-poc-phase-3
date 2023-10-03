@@ -1,14 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
 'use strict';
 
 angular.
