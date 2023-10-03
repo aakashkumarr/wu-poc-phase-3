@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('searchdata');
+angular.module('searchdata',[]);
