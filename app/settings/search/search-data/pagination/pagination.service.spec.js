@@ -8,7 +8,7 @@ describe('pagination service', function () {
     { "id": 6, "mtcn": "9326362052", "date": "2023-07-08", "fixedTransaction": 4, "recordingCountry": "Argentina", "recordingCountryCode": "AR", "payOutCountry": "Philippines", "payOutCountryCode": "PH", "status": "unpaid", "direction": "inbound", "sendingSideCurrency": "Peso", "sendingSideCurrencyCode": "ARS", "transactionType": "Regular Outbound", "settlementStatus": "Unsettled", "importStatus": "Settlement Only", "sendPrincipal": 2.81, "payoutPrincipal": 7.59, "clearPrincipal": 0.65, "totalCharges": 475.79, "recordingDate": "2023-09-22", "clearprincipalLOC": 4.21, "agentIncome": 580.92, "recordingDateLOC": "2023-01-19", "sendingSideCountry": "China", "sendingSideCountryCode": "CN" }]
 
     // Load the 'myApp' module before each test
-    beforeEach(module('myApp'));
+    beforeEach(module('paginationService'));
 
     // Inject the 'pagination' service
     beforeEach(inject(function (_pagination_) {

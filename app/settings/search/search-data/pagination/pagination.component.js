@@ -26,14 +26,14 @@ angular.
         this.next=function(){
           $rootScope.$broadcast('nextRow',{})
         if(this.currentPage>this.numPages()){
-            this.currentPage--;
+            this.currentPage++;
             this.updatePageitems();
         }  
         }
         this.prev=function(){
           $rootScope.$broadcast('prevRow',{})
           if(this.currentPage<this.numPages()){
-            this.currentPage++;
+            this.currentPage--;
             this.updatePageitems();
         }  
         }
