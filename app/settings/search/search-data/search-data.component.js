@@ -22,7 +22,7 @@ angular.module("searchdata", ['pagination']).component("searchdata", {
       $http.get("http://localhost:3000/transactions").then((res) => {
         console.log("fetch data:", res);
         array = res.data;
-        $scope.tableData = pagination.createPage(array, 10);
+        $scope.tableData = pagination.createPage(array, 5);
         $scope.totalPages = $scope.tableData.length;
         console.log($scope.tableData);
         // console.log("mapped options: ", mapOptions(array));
