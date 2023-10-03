@@ -2,7 +2,7 @@
 'use strict';
 
 angular.
-  module('pagination', []).
+  module('pagination', ['pagination']).
   component('pagination', {
     templateUrl: 'settings/search/search-data/pagination/pagination.template.html',
     // template:'<h1> hello </h1>',
