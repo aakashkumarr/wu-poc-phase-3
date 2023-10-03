@@ -101,7 +101,7 @@ app.controller("welcmController", [
 
       for (var key in json) {
         if (json.hasOwnProperty(key)) {
-          xml += "<" + key + ">" + json[key] + "</" + key + ">\n";
+            xml += "<" + key + ">" + json[key] + "</" + key + ">\n";
         }
       }
 
