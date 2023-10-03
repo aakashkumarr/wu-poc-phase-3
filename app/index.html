@@ -35,12 +35,12 @@
     <div style="display: flex; flex-direction:row; justify-content: space-between; width: 100%;">
       
       <sidenav style="min-height: 100vh; position: fixed; top:48px;"></sidenav>
-      <div style="width:100%">
+      <!-- <div style="width:100%">
         <div class="links-style"
         ><a href="#!/" ng-show="$ctrl.showHome()">Home</a
         ><a href="#!/settings" ng-show="$ctrl.showSettings()">Home>Settings</a
         ><a href="#!/settings/search" ng-show="$ctrl.showSearch()">Home>Settings>Transaction Search</a></div
-      >
+      > -->
         <div class="view-container" ng-view></div>
       </div> 
       <div ng-include="'settings/search/search-data/popup/popup.html'"></div> 
@@ -65,11 +65,11 @@
   <script src="settings/search/search.module.js"></script>
   <script src="settings/search/search.component.js"></script>
  
-  <script src="settings/search/search-data/search-data.module.js"></script>
+  <!-- <script src="settings/search/search-data/search-data.module.js"></script> -->
   <script src="settings/search/search-data/search-data.component.js"></script>
   <script src="settings/search/search-data/search-data.service.js"></script>
   <script src="settings/search/search-data/popup/popup.js"></script>
-  <script src="settings/search/search-data/pagination/pagination.module.js"></script>
+  <!-- <script src="settings/search/search-data/pagination/pagination.module.js"></script> -->
   <script src="settings/search/search-data/pagination/pagination.component.js"></script>
   <script src="settings/search/search-data/pagination/pagination.service.js"></script>
 
