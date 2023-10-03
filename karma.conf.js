@@ -16,6 +16,7 @@ module.exports = function(config) {
       'app.js',
       'settings/search/**/*.js',
       'settings/**/*.js',
+      'layouts/**/*.js'
   
       // 'settings/search/search.component.js',
       // 'settings/search/search.module.js'

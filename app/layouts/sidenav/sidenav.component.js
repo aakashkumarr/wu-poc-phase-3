@@ -1,7 +1,7 @@
 'use strict';
 
 angular.
-  module('sidenav').
+  module('sidenav', []).
   component('sidenav', {
     templateUrl: 'layouts/sidenav/sidenav.template.html',
     // template:'<h1> hello </h1>',
