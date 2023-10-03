@@ -2,13 +2,13 @@
 <div ng-controller="welcmController">
   <div class="details" id="popup" ng-show="formData">
     <div class="popup">
-      <h4>Transaction Summary</h4>
+      <h4 class="popup-heading">Transaction Summary</h4>
       <form>
         <div mat-dialog-content class="content">
           <div class="rows">
             <div class="input-field">
               <input type="text" id="TransactionType" name="TransactionType" ng-model="formData.mtcn" >
-              <label>MCTN</label>
+              <label>MTCN</label>
             </div>
 
             <div class="input-field">

@@ -1,3 +1,7 @@
+:root{
+  --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%234c579c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -798,7 +802,8 @@ th {
   padding-block: 0.5rem;
   /* padding-block: 0.2rem; */
   /* min-width: 5rem;  */
-  text-align: center !important ;
+  text-align: left !important ;
+  text-transform: capitalize;
   text-wrap: nowrap;
   text-overflow: ellipsis;
 }
@@ -907,7 +912,12 @@ position: relative;
 .form-floating2 {
   position: relative;
 
+
   /* width: 200px; */
+}
+
+.form-floating2 lable, .form-floating lable::placeholder{
+  /* color: #999 !important; */
 }
 
 .form-floating2 select {
@@ -922,7 +932,7 @@ position: relative;
   /* Set the bottom border color */
 
   background-color: transparent;
-
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%234c579c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   color: black;
 
   appearance: none;
