@@ -1,4 +1,4 @@
-angular.module('myApp')
+angular.module('paginationService',[])
 .service('pagination', ['$q', '$timeout', function ($q, $timeout){
             // return $http.get('https://shiny-space-lamp-wwv44r5xr44fvjxq-3000.app.github.dev/api/auth', { headers: { 'authorization': token}});
 

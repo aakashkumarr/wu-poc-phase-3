@@ -9,7 +9,9 @@ angular.module('myApp', [
   'settings',
   'search',
   'searchdata',
-  'pagination'
+  'pagination',
+  'paginationService',
+  'popup'
 ])
 .service('AuthService', function() {})
 .controller('myCtrl', ['$http', '$rootScope', 'AuthService','$location', function($http, $rootScope,AuthService,$location) {

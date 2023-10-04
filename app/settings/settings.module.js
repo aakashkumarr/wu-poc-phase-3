@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('settings', []);
+angular.module('settings');

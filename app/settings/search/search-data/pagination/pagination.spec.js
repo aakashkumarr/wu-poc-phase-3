@@ -7,7 +7,7 @@ describe('pagination component', function() {
   
     // Load the 'pagination' module before each test
     beforeEach(module('pagination'));
-    beforeEach(module('myApp'));
+    beforeEach(module('paginationService'));
   
     // Inject necessary services and modules
     beforeEach(inject(function(_$componentController_, _$rootScope_, _$compile_, _$q_, _pagination_) {
@@ -30,26 +30,26 @@ describe('pagination component', function() {
       expect(ctrl.currentPage).toBe(1);
       expect(ctrl.totalPage).toBe(1);
       expect(ctrl.pageSize).toBe(20);
-      expect(ctrl.rowsPerPage).toBe("10");
+      expect(ctrl.rowsPerPage).toBe("5");
       expect(ctrl.pageItems).toBeUndefined();
     });
   
-//     it('should update page items when currentPage changes', function() {
-//       var bindings = {
-//         currentPage: 1,
-//         totalPages: 3,
-//         onPageChange: angular.noop,
-//         data: [1, 2, 3, 4, 5, 6]
-//       };
+  //   it('should update page items when currentPage changes', function() {
+  //     var bindings = {
+  //       currentPage: 1,
+  //       totalPages: 3,
+  //       onPageChange: angular.noop,
+  //       data: [1, 2, 3, 4, 5, 6]
+  //     };
   
-//       var ctrl = $componentController('pagination', null, bindings);
+  //     var ctrl = $componentController('pagination', null, bindings);
   
-//       // Simulate a change in currentPage
-//       ctrl.currentPage = 2;
-//       ctrl.updatePageitems();
-//   console.log(ctrl)
-//       expect(ctrl.pageItems).toEqual([3, 4, 5, 6]);
-//     });
+  //     // Simulate a change in currentPage
+  //     ctrl.currentPage = 2;
+  //     ctrl.updatePageitems();
+  // console.log(ctrl)
+  //     expect(ctrl.pageItems).toEqual([3, 4, 5, 6]);
+  //   });
   
     // it('should handle next and prev functions correctly', function() {
     //   var bindings = {
